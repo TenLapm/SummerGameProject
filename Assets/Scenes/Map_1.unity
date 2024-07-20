@@ -210,6 +210,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &515278169
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 515278171}
+  - component: {fileID: 515278170}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &515278170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515278169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a73750100789d5e4687907c87d512399, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAWin: 0
+  playerBWin: 0
+  GameEnded: 0
+--- !u!4 &515278171
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515278169}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 542.59674, y: 300.52972, z: 0.19007319}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &751412376
 GameObject:
   m_ObjectHideFlags: 0
@@ -993,6 +1040,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8015289328942119885, guid: c961d884c67a87948aab10e2bf7713b6, type: 3}
+      propertyPath: setTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1462551268577368347, guid: c961d884c67a87948aab10e2bf7713b6, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1073,6 +1124,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3693771417780887167, guid: c961d884c67a87948aab10e2bf7713b6, type: 3}
+      propertyPath: PlayerAWin
+      value: 
+      objectReference: {fileID: 1778110177}
+    - target: {fileID: 3693771417780887167, guid: c961d884c67a87948aab10e2bf7713b6, type: 3}
+      propertyPath: PlayerBWin
+      value: 
+      objectReference: {fileID: 1519698569}
     - target: {fileID: 4335590425851568376, guid: c961d884c67a87948aab10e2bf7713b6, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1585,3 +1644,4 @@ SceneRoots:
   - {fileID: 1139691213}
   - {fileID: 2795827485973307714}
   - {fileID: 290257642}
+  - {fileID: 515278171}
