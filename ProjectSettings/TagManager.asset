@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - PowerUp
+  - SPPU
   layers:
   - Default
   - TransparentFX
@@ -47,6 +49,12 @@ TagManager:
   - name: Obstacle
     uniqueID: 1154551757
     locked: 0
+  - name: Trail
+    uniqueID: 1554793283
+    locked: 0
   - name: Player
     uniqueID: 1802548513
+    locked: 0
+  - name: UI
+    uniqueID: 516829113
     locked: 0

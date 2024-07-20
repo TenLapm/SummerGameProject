@@ -8,14 +8,20 @@ public class InGameUI : MonoBehaviour
 {
     [SerializeField] private GameObject PauseMenu;
     [SerializeField] private GameObject Interface;
+    
     [SerializeField] private TMP_Text timerText;
     private Timer timer;
     private bool paused = false;
+    private GameManager gameManager;
+
+    [SerializeField] private GameObject PlayerAWin;
+    [SerializeField] private GameObject PlayerBWin;
 
     void Start()
     {
         Interface.SetActive(true);
         timer = GetComponent<Timer>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     void Update()
@@ -38,6 +44,11 @@ public class InGameUI : MonoBehaviour
         else
         {
             timerText.text = string.Format("{0:0}", Mathf.FloorToInt(timer.CurrentTime));
+            
+        }
+        if(gameManager.GameEnded)
+        {
+            GameEnd();
         }
     }
 
@@ -62,5 +73,23 @@ public class InGameUI : MonoBehaviour
         Time.timeScale = 1.0f;
         paused = false;
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void GameEnd()
+    {
+            PauseMenu.SetActive(false);
+            Interface.SetActive(false);
+            Time.timeScale = 0.0f;
+
+            if (gameManager.playerAWin)
+            {
+                PlayerAWin.SetActive(true);
+            }
+            else if (gameManager.playerBWin)
+            {
+                PlayerBWin.SetActive(true);
+            }
+        
+        
     }
 }

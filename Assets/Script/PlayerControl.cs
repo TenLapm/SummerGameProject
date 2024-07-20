@@ -290,7 +290,6 @@ public class PlayerControl : MonoBehaviour
         GameObject selectedPrefab = GetRandomSpritePrefab();
         Vector3 spawnPoint = GetRandomSpawnPoint();
 
-        // Set the sorting order to ensure proper rendering
         SpriteRenderer spriteRenderer = selectedPrefab.GetComponent<SpriteRenderer>();
         spriteRenderer.sortingOrder = Mathf.RoundToInt(Time.time * 100);
 

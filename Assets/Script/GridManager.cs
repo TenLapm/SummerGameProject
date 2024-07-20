@@ -16,6 +16,11 @@ public class GridManager : MonoBehaviour
     private List<GameObject> tilePool = new List<GameObject>();
     private Player[,] gridOwners;
 
+    private float playerAPercent = 0f;
+    private float playerBPercent = 0f;
+
+    [HideInInspector] public float PlayerAPercent => playerAPercent;
+    [HideInInspector] public float PlayerBPercent => playerBPercent;
     void Start()
     {
         gridOwners = new Player[rows, cols];
@@ -116,8 +121,8 @@ public class GridManager : MonoBehaviour
         }
 
         int totalGrids = rows * cols;
-        float playerAPercent = (float)playerACount / totalGrids * 100;
-        float playerBPercent = (float)playerBCount / totalGrids * 100;
+        playerAPercent = (float)playerACount / totalGrids * 100;
+        playerBPercent = (float)playerBCount / totalGrids * 100;
         float defaultPercent = (float)defaultCount / totalGrids * 100;
 
         playerAText.text = $"Player A: {playerAPercent:F2}%";
