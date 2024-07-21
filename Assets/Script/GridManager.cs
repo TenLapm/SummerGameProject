@@ -128,18 +128,20 @@ public class GridManager : MonoBehaviour
         playerBPercent = (float)playerBCount / totalGrids * 100;
         float defaultPercent = (float)defaultCount / totalGrids * 100;
 
-        playerAText.text = $"Player A: {playerAPercent:F2}%";
-        playerBText.text = $"Player B: {playerBPercent:F2}%";
+        playerAPercent = Mathf.Clamp01((playerAPercent + (defaultPercent / 2)) / 100f );
+        playerBPercent = Mathf.Clamp01((playerBPercent + (defaultPercent / 2)) / 100f );
 
-        // Update the fill amounts of the score bars
+        playerAText.text = $"Player A: {playerAPercent * 100:F2}%";
+        playerBText.text = $"Player B: {playerBPercent * 100:F2}%";
+
         if (playerAScoreBar != null)
         {
-            playerAScoreBar.fillAmount = playerAPercent / 100f;
+            playerAScoreBar.fillAmount = playerAPercent;
         }
 
         if (playerBScoreBar != null)
         {
-            playerBScoreBar.fillAmount = playerBPercent / 100f;
+            playerBScoreBar.fillAmount = playerBPercent;
         }
     }
 
