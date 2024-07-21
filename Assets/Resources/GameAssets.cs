@@ -1,13 +1,9 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System.Reflection;
 
 public class GameAssets : MonoBehaviour
 {
     private static GameAssets _i;
-
 
     public static GameAssets i
     {
@@ -28,6 +24,12 @@ public class GameAssets : MonoBehaviour
     {
         public SoundManager.Sound sound;
         public AudioClip audioClip;
+        public SoundType soundType;
+    }
+
+    public enum SoundType
+    {
+        BGM,
+        SFX
     }
 }
-

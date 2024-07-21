@@ -10,9 +10,10 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public bool playerBWin = false;
     [HideInInspector] public bool GameEnded = false;
 
-    // Start is called before the first frame update
     void Start()
     {
+        SoundManager.PlaySound(SoundManager.Sound.Back);
+        SoundManager.PlaySound(SoundManager.Sound.TestSound);
         gridManager = FindObjectOfType<GridManager>();
         timer = FindObjectOfType<Timer>();
     }
