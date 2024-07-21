@@ -11,6 +11,8 @@ public class GridManager : MonoBehaviour
     public GameObject tilePrefab;
     public TextMeshProUGUI playerAText;
     public TextMeshProUGUI playerBText;
+    public Image playerAScoreBar; // Reference to the first score bar
+    public Image playerBScoreBar; // Reference to the second score bar
 
     private GameObject[,] gridArray;
     private List<GameObject> tilePool = new List<GameObject>();
@@ -21,6 +23,7 @@ public class GridManager : MonoBehaviour
 
     [HideInInspector] public float PlayerAPercent => playerAPercent;
     [HideInInspector] public float PlayerBPercent => playerBPercent;
+
     void Start()
     {
         gridOwners = new Player[rows, cols];
@@ -127,6 +130,17 @@ public class GridManager : MonoBehaviour
 
         playerAText.text = $"Player A: {playerAPercent:F2}%";
         playerBText.text = $"Player B: {playerBPercent:F2}%";
+
+        // Update the fill amounts of the score bars
+        if (playerAScoreBar != null)
+        {
+            playerAScoreBar.fillAmount = playerAPercent / 100f;
+        }
+
+        if (playerBScoreBar != null)
+        {
+            playerBScoreBar.fillAmount = playerBPercent / 100f;
+        }
     }
 
     public Vector2Int WorldToGridPosition(Vector3 worldPosition)
