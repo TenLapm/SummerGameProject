@@ -6,6 +6,8 @@ TagManager:
   tags:
   - PowerUp
   - SPPU
+  - SoundEffect
+  - BGM
   layers:
   - Default
   - TransparentFX
