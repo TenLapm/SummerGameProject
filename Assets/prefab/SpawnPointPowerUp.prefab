@@ -46,8 +46,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   count: 0
   isMax: 0
-  axisX: 5
-  axisY: 5
+  axisX: 2
+  axisY: 2
   PowerUp:
-  - {fileID: 5936384782072512144, guid: 1e2059a689f46e74586aa030d321e8cd, type: 3}
-  limit: 5
+  - {fileID: 2750863981230489023, guid: dd7b42583e4a97b4fa4505bae57b39d7, type: 3}
+  - {fileID: 8917208418784984139, guid: 2144271f6fb7ebd4c83e1c7079cdda61, type: 3}
+  limit: 1
+  maxTimer: 5
+  radius: 0.5

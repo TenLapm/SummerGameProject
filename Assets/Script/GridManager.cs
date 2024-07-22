@@ -11,10 +11,18 @@ public class GridManager : MonoBehaviour
     public GameObject tilePrefab;
     public TextMeshProUGUI playerAText;
     public TextMeshProUGUI playerBText;
+    public Image playerAScoreBar; // Reference to the first score bar
+    public Image playerBScoreBar; // Reference to the second score bar
 
     private GameObject[,] gridArray;
     private List<GameObject> tilePool = new List<GameObject>();
     private Player[,] gridOwners;
+
+    private float playerAPercent = 0f;
+    private float playerBPercent = 0f;
+
+    [HideInInspector] public float PlayerAPercent => playerAPercent;
+    [HideInInspector] public float PlayerBPercent => playerBPercent;
 
     void Start()
     {
@@ -116,12 +124,25 @@ public class GridManager : MonoBehaviour
         }
 
         int totalGrids = rows * cols;
-        float playerAPercent = (float)playerACount / totalGrids * 100;
-        float playerBPercent = (float)playerBCount / totalGrids * 100;
+        playerAPercent = (float)playerACount / totalGrids * 100;
+        playerBPercent = (float)playerBCount / totalGrids * 100;
         float defaultPercent = (float)defaultCount / totalGrids * 100;
 
-        playerAText.text = $"Player A: {playerAPercent:F2}%";
-        playerBText.text = $"Player B: {playerBPercent:F2}%";
+        playerAPercent = Mathf.Clamp01((playerAPercent + (defaultPercent / 2)) / 100f );
+        playerBPercent = Mathf.Clamp01((playerBPercent + (defaultPercent / 2)) / 100f );
+
+        playerAText.text = $"Player A: {playerAPercent * 100:F2}%";
+        playerBText.text = $"Player B: {playerBPercent * 100:F2}%";
+
+        if (playerAScoreBar != null)
+        {
+            playerAScoreBar.fillAmount = playerAPercent;
+        }
+
+        if (playerBScoreBar != null)
+        {
+            playerBScoreBar.fillAmount = playerBPercent;
+        }
     }
 
     public Vector2Int WorldToGridPosition(Vector3 worldPosition)
@@ -133,6 +154,10 @@ public class GridManager : MonoBehaviour
         int x = Mathf.FloorToInt((worldPosition.x - startPos.x) / tileSize);
         int y = Mathf.FloorToInt((worldPosition.y - startPos.y) / tileSize);
 
+        x = Mathf.Clamp(x, 0, cols - 1);
+        y = Mathf.Clamp(y, 0, rows - 1);
+
         return new Vector2Int(x, y);
     }
+
 }
