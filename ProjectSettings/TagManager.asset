@@ -8,6 +8,8 @@ TagManager:
   - SPPU
   - SoundEffect
   - BGM
+  - Explosion
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -15,8 +17,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - PlayerA
+  - PlayerB
   - 
   - 
   - 
@@ -48,14 +50,17 @@ TagManager:
   - name: BG
     uniqueID: 3369384839
     locked: 0
-  - name: Obstacle
-    uniqueID: 1154551757
-    locked: 0
   - name: Trail
     uniqueID: 1554793283
     locked: 0
+  - name: Obstacle
+    uniqueID: 1154551757
+    locked: 0
   - name: Player
     uniqueID: 1802548513
+    locked: 0
+  - name: Power ups
+    uniqueID: 557785339
     locked: 0
   - name: UI
     uniqueID: 516829113
