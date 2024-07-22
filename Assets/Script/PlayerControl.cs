@@ -300,9 +300,6 @@ public class PlayerControl : MonoBehaviour
                 Quaternion rotationZ = Quaternion.LookRotation(Vector3.forward, direction);
                 transform.rotation = rotationZ;
                 spiningSpeed = (speed - minimumSpeedForBounce) / 0.5f;
-                //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                //Quaternion rotationZ = Quaternion.LookRotation(Vector3.forward, direction);
-                //transform.rotation = rotationZ;
                 isBouncing = true;
                 bounceTime = maxBounceTime;
             }

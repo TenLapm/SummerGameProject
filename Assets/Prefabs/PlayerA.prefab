@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5173230418150763908}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerA TrailSpawnPoint 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,11 +43,12 @@ GameObject:
   - component: {fileID: 8938971928667718163}
   - component: {fileID: 3621482152636630014}
   - component: {fileID: 85217121939039878}
+  - component: {fileID: 7394888016297024326}
   - component: {fileID: 4494416264631432049}
   - component: {fileID: 5315908783752624247}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerA
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68,6 +69,7 @@ Transform:
   - {fileID: 7239592604878739557}
   - {fileID: 5173230418150763908}
   - {fileID: 6809908269558845988}
+  - {fileID: 2081797215446383053}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8938971928667718163
@@ -159,7 +161,6 @@ MonoBehaviour:
   minimumSpeed: 0
   upSpeed: 0.2
   slowSpeed: 0.15
-  facing: 2
   turning: 0.5
   minimumSpeedForBounce: 5
   maxBounceTime: 0.2
@@ -172,6 +173,22 @@ MonoBehaviour:
   spritePrefab3: {fileID: 5777001336891184353, guid: 530c653909534ed40a7abdc80f936a10, type: 3}
   brushRadius: 0
   spawnDistance: 0.2
+--- !u!114 &7394888016297024326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469184550918937538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d34214581caed64f93a3f1e014c8c16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HavePowerUp: 0
+  usingPowerUs: 0
+  Explosion: {fileID: 1028129361691129504}
+  Jam: {fileID: 1043560398966371887}
 --- !u!58 &4494416264631432049
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -234,6 +251,73 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &4740917676696853265
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2081797215446383053}
+  - component: {fileID: 1028129361691129504}
+  m_Layer: 6
+  m_Name: Explosion
+  m_TagString: Explosion
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2081797215446383053
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4740917676696853265}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1971732465065807255}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1028129361691129504
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4740917676696853265}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &5977635153233062079
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +327,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6809908269558845988}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerA TrailSpawnPoint 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -274,7 +358,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7239592604878739557}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerA TrailSpawnPoint 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -123,26 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &28628352 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 798671491940621522, guid: 6e47df042abe86a4ea7a83b7c8b479ce, type: 3}
-  m_PrefabInstance: {fileID: 329681604433884215}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &28628359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 28628352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d34214581caed64f93a3f1e014c8c16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HavePowerUp: 0
-  usingPowerUs: 0
-  Explosion: {fileID: 0}
 --- !u!114 &150717773 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6479567304444507508, guid: b24fd8c8bb317094bb9aa22efb081776, type: 3}
@@ -182,6 +162,14 @@ PrefabInstance:
       propertyPath: limit
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
+      propertyPath: PowerUp.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
+      propertyPath: PowerUp.Array.data[0]
+      value: 
+      objectReference: {fileID: 9025755198874920527, guid: 41ea1ed4d90324748b21f61d40ad2f77, type: 3}
     - target: {fileID: 3314273616676505158, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.62
@@ -244,6 +232,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnPointPowerUp
       objectReference: {fileID: 0}
+    - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
+      propertyPath: PowerUp.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
+      propertyPath: PowerUp.Array.data[0]
+      value: 
+      objectReference: {fileID: 9025755198874920527, guid: 41ea1ed4d90324748b21f61d40ad2f77, type: 3}
     - target: {fileID: 3314273616676505158, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -524,6 +520,14 @@ PrefabInstance:
       propertyPath: limit
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
+      propertyPath: PowerUp.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
+      propertyPath: PowerUp.Array.data[0]
+      value: 
+      objectReference: {fileID: 9025755198874920527, guid: 41ea1ed4d90324748b21f61d40ad2f77, type: 3}
     - target: {fileID: 3314273616676505158, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.92
@@ -569,26 +573,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
---- !u!1 &1419342291 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1469184550918937538, guid: c95d706a3983070418b1b43ff08d5256, type: 3}
-  m_PrefabInstance: {fileID: 4715023831681447664}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1419342298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1419342291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d34214581caed64f93a3f1e014c8c16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HavePowerUp: 0
-  usingPowerUs: 0
-  Explosion: {fileID: 0}
 --- !u!1 &1468306686
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,6 +693,14 @@ PrefabInstance:
       propertyPath: limit
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
+      propertyPath: PowerUp.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
+      propertyPath: PowerUp.Array.data[0]
+      value: 
+      objectReference: {fileID: 9025755198874920527, guid: 41ea1ed4d90324748b21f61d40ad2f77, type: 3}
     - target: {fileID: 3314273616676505158, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.69
@@ -1123,6 +1115,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 7561690179623664965, guid: 6e47df042abe86a4ea7a83b7c8b479ce, type: 3}
+      propertyPath: Jam
+      value: 
+      objectReference: {fileID: 1494037007738241952, guid: 525b9772c713fc94ebf608c2536c3d3c, type: 3}
     - target: {fileID: 7627676072681640341, guid: 6e47df042abe86a4ea7a83b7c8b479ce, type: 3}
       propertyPath: m_Constraints
       value: 4
@@ -1130,10 +1126,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 798671491940621522, guid: 6e47df042abe86a4ea7a83b7c8b479ce, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 28628359}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e47df042abe86a4ea7a83b7c8b479ce, type: 3}
 --- !u!1001 &657873883577602740
 PrefabInstance:
@@ -1203,6 +1196,10 @@ PrefabInstance:
     - target: {fileID: 687737189925334354, guid: ba63c7a711ea94549a6cc4c82a84b23e, type: 3}
       propertyPath: m_Name
       value: Map_1_Obstacle02
+      objectReference: {fileID: 0}
+    - target: {fileID: 687737189925334354, guid: ba63c7a711ea94549a6cc4c82a84b23e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 687737189925334354, guid: ba63c7a711ea94549a6cc4c82a84b23e, type: 3}
       propertyPath: m_TagString
@@ -1325,6 +1322,10 @@ PrefabInstance:
     - target: {fileID: 7955159566268401672, guid: e8c192e8c43187b4789a055f3230b495, type: 3}
       propertyPath: m_Name
       value: Map_1_Obstacle06
+      objectReference: {fileID: 0}
+    - target: {fileID: 7955159566268401672, guid: e8c192e8c43187b4789a055f3230b495, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7955159566268401672, guid: e8c192e8c43187b4789a055f3230b495, type: 3}
       propertyPath: m_TagString
@@ -1501,6 +1502,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7394888016297024326, guid: c95d706a3983070418b1b43ff08d5256, type: 3}
+      propertyPath: Jam
+      value: 
+      objectReference: {fileID: 8425058719138339900, guid: fc044830e8331d149b46fafb0c6db848, type: 3}
     - target: {fileID: 9012241518478347905, guid: c95d706a3983070418b1b43ff08d5256, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -1508,10 +1513,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1469184550918937538, guid: c95d706a3983070418b1b43ff08d5256, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1419342298}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c95d706a3983070418b1b43ff08d5256, type: 3}
 --- !u!1001 &5260937356007284094
 PrefabInstance:
@@ -1524,6 +1526,10 @@ PrefabInstance:
     - target: {fileID: 1391876971533294207, guid: 9d527dd2542caa04caffe07ef74f27b7, type: 3}
       propertyPath: m_Name
       value: Map_1_Obstacle01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1391876971533294207, guid: 9d527dd2542caa04caffe07ef74f27b7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1391876971533294207, guid: 9d527dd2542caa04caffe07ef74f27b7, type: 3}
       propertyPath: m_TagString
@@ -2005,6 +2011,10 @@ PrefabInstance:
       value: Map_1_Obstacle07
       objectReference: {fileID: 0}
     - target: {fileID: 2109908429994723573, guid: 272920050a3d6e543b85e584ac37d8d6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2109908429994723573, guid: 272920050a3d6e543b85e584ac37d8d6, type: 3}
       propertyPath: m_TagString
       value: Wall
       objectReference: {fileID: 0}
@@ -2079,6 +2089,10 @@ PrefabInstance:
       value: Map_1_Obstacle03
       objectReference: {fileID: 0}
     - target: {fileID: 3285719017840790631, guid: de0c9282c739714418cfce92a6ec904a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3285719017840790631, guid: de0c9282c739714418cfce92a6ec904a, type: 3}
       propertyPath: m_TagString
       value: Wall
       objectReference: {fileID: 0}
@@ -2103,6 +2117,10 @@ PrefabInstance:
     - target: {fileID: 4020722373893981087, guid: f3b8bb194366cea4293ffc9686469f07, type: 3}
       propertyPath: m_Name
       value: Map_1_Obstacle04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020722373893981087, guid: f3b8bb194366cea4293ffc9686469f07, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4020722373893981087, guid: f3b8bb194366cea4293ffc9686469f07, type: 3}
       propertyPath: m_TagString
@@ -2225,6 +2243,10 @@ PrefabInstance:
     - target: {fileID: 6803186890405766068, guid: 2d873afb88b5af7448c6bb712f47536c, type: 3}
       propertyPath: m_Name
       value: Map_1_Obstacle05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6803186890405766068, guid: 2d873afb88b5af7448c6bb712f47536c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6803186890405766068, guid: 2d873afb88b5af7448c6bb712f47536c, type: 3}
       propertyPath: m_TagString
