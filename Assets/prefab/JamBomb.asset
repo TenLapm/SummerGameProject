@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: JamBomb
   m_EditorClassIdentifier: 
   name: JamBomb
-  type: 0
+  type: 4
   artwork: {fileID: 0}
   duration: 0
   scale: 0
   Clone: {fileID: 0}
-  instant: 0
+  instant: 1
