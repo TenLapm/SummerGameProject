@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 
 public enum Player
 {
-    PlayerA, PlayerB, Default
+    PlayerA, PlayerB,Default
 }
 
 public class PlayerControl : MonoBehaviour
@@ -56,14 +56,13 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
-
-        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S))
-        {
-            isDeacceleration = true;
-        }
-        brushRadius = transform.localScale.x;
-        if (isExplosion)
-        {
+        
+            if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S))
+            {
+                isDeacceleration = true;
+            }
+            brushRadius = transform.localScale.x;
+        if (isExplosion) {
             speed = maxSpeed;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             Quaternion rotationZ = Quaternion.LookRotation(Vector3.forward, direction);
@@ -145,35 +144,35 @@ public class PlayerControl : MonoBehaviour
                 }
                 isDeacceleration = false;
             }
-
+            
             if (Input.GetKeyUp(KeyCode.W))
-            {
-                isDeacceleration = true;
-            }
-            else if (Input.GetKey(KeyCode.S))
-            {
-                if (speed < minimumSpeed)
-                    if (speed <= minimumSpeed)
-                    {
-                        speed = minimumSpeed;
-                    }
+                {
+                    isDeacceleration = true;
+                }
+                else if (Input.GetKey(KeyCode.S))
+                {
+                    if (speed < minimumSpeed)
+                        if (speed <= minimumSpeed)
+                        {
+                            speed = minimumSpeed;
+                        }
 
-                if (speed != minimumSpeed)
-                    if (speed <= 0)
-                    {
-                        speed -= slowSpeed * 5;
-                    }
+                    if (speed != minimumSpeed)
+                        if (speed <= 0)
+                        {
+                            speed -= slowSpeed * 5;
+                        }
 
-                    else if (speed != minimumSpeed)
-                    {
-                        speed -= slowSpeed;
-                    }
-                isDeacceleration = false;
-            }
-            else if (Input.GetKeyUp(KeyCode.S))
-            {
-                isDeacceleration = true;
-            }
+                        else if (speed != minimumSpeed)
+                        {
+                            speed -= slowSpeed;
+                        }
+                    isDeacceleration = false;
+                }
+                else if (Input.GetKeyUp(KeyCode.S))
+                {
+                    isDeacceleration = true;
+                }
             if (isDeacceleration == true)
             {
                 if (speed < minimumSpeed)
@@ -189,12 +188,12 @@ public class PlayerControl : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.A))
             {
-
+                
                 gameObject.transform.Rotate(0.0f, 0.0f, turning);
             }
             else if (Input.GetKey(KeyCode.D))
             {
-
+                
                 gameObject.transform.Rotate(0.0f, 0.0f, -turning);
             }
         }
@@ -250,12 +249,12 @@ public class PlayerControl : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-
+               
                 gameObject.transform.Rotate(0.0f, 0.0f, turning);
             }
             else if (Input.GetKey(KeyCode.RightArrow))
             {
-
+                
                 gameObject.transform.Rotate(0.0f, 0.0f, -turning);
             }
         }
@@ -273,7 +272,7 @@ public class PlayerControl : MonoBehaviour
         if (!isBouncing)
         {
             rb.velocity = transform.up * speed;
-
+            
             if (isHittingWall)
             {
                 rb.velocity = transform.up * 1;
@@ -295,20 +294,20 @@ public class PlayerControl : MonoBehaviour
     {
 
         if (speed > minimumSpeedForBounce && !isHittingWall)
-        {
-            direction = Vector3.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            Quaternion rotationZ = Quaternion.LookRotation(Vector3.forward, direction);
-            transform.rotation = rotationZ;
-            spiningSpeed = (speed - minimumSpeedForBounce) / 0.5f;
-            //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            //Quaternion rotationZ = Quaternion.LookRotation(Vector3.forward, direction);
-            //transform.rotation = rotationZ;
-            isBouncing = true;
-            bounceTime = maxBounceTime;
-        }
-
-
+            {
+                direction = Vector3.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                Quaternion rotationZ = Quaternion.LookRotation(Vector3.forward, direction);
+                transform.rotation = rotationZ;
+                spiningSpeed = (speed - minimumSpeedForBounce) / 0.5f;
+                //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                //Quaternion rotationZ = Quaternion.LookRotation(Vector3.forward, direction);
+                //transform.rotation = rotationZ;
+                isBouncing = true;
+                bounceTime = maxBounceTime;
+            }
+        
+        
         isDeacceleration = true;
         isHittingWall = true;
     }
@@ -331,7 +330,7 @@ public class PlayerControl : MonoBehaviour
             {
                 if (collision.gameObject.layer == 6)
                 {
-
+                    
                     isExplosion = true;
                 }
             }

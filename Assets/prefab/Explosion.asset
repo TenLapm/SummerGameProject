@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c7a7da47244b1143a91fe5a1590a5d7, type: 3}
-  m_Name: TestA
+  m_Name: Explosion
   m_EditorClassIdentifier: 
-  name: TypeA
-  type: 1
+  name: Bomb
+  type: 2
   artwork: {fileID: 0}
-  duration: 2
-  scale: 0
+  duration: 3
+  scale: 2
   Clone: {fileID: 0}
-  instant: 1
+  instant: 2
