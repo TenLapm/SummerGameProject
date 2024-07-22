@@ -154,6 +154,10 @@ public class GridManager : MonoBehaviour
         int x = Mathf.FloorToInt((worldPosition.x - startPos.x) / tileSize);
         int y = Mathf.FloorToInt((worldPosition.y - startPos.y) / tileSize);
 
+        x = Mathf.Clamp(x, 0, cols - 1);
+        y = Mathf.Clamp(y, 0, rows - 1);
+
         return new Vector2Int(x, y);
     }
+
 }
