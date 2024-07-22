@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c7a7da47244b1143a91fe5a1590a5d7, type: 3}
-  m_Name: TestA
+  m_Name: Upsize
   m_EditorClassIdentifier: 
-  name: TypeA
+  name: Upsize
   type: 1
   artwork: {fileID: 0}
   duration: 2
