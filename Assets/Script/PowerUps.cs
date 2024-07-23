@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum powerUpType
 {
-    Default, UpSize, Explosion, Clone, JamBomb
+    Default, UpSize, Explosion, Clone, JamBomb, JamShot
 }
 
 public enum Instant

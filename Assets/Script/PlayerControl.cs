@@ -121,7 +121,7 @@ public class PlayerControl : MonoBehaviour
 
         if (Vector3.Distance(transform.position, lastSpawnPosition) >= spawnDistance)
         {
-            SpawnSprite();
+            //SpawnSprite();
             lastSpawnPosition = transform.position;
         }
     }
@@ -342,14 +342,12 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    private void SpawnSprite()
+    public void SpawnSprite()
     {
         GameObject selectedPrefab = GetRandomSpritePrefab();
         Vector3 spawnPoint = GetRandomSpawnPoint();
-
         SpriteRenderer spriteRenderer = selectedPrefab.GetComponent<SpriteRenderer>();
         spriteRenderer.sortingOrder = Mathf.RoundToInt(Time.time * 100);
-
         Instantiate(selectedPrefab, spawnPoint, Quaternion.identity);
     }
 

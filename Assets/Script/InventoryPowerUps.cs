@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements.Experimental;
 using static UnityEditor.PlayerSettings;
 
 public class InventoryPowerUps : MonoBehaviour
@@ -19,9 +20,10 @@ public class InventoryPowerUps : MonoBehaviour
     private GameObject Gclone;
     [SerializeField] private GameObject Jam;
     private int instant;
+    private PlayerControl playerControl;
     void Start()
     {
-        
+        playerControl = GetComponent<PlayerControl>();
     }
 
     void Update()
@@ -114,9 +116,22 @@ public class InventoryPowerUps : MonoBehaviour
                     }
                     usingPowerUs = true;
                     break;
+                case 5:
+                    Vector3 playerPos = transform.position;
+                    Vector3 playerDirection = transform.up;
+                    float spawnDistance = 1f;
+                    
+                    for (float i = 0; i < PowerUp.scale; i++)
+                    {
+                        Vector3 spawnPos = playerPos + playerDirection * (spawnDistance + (i/2));
+                        Debug.Log(playerDirection);
+                        GameObject newJam = Instantiate(Jam, spawnPos, Quaternion.identity);
+                    }
+                    usingPowerUs = true;
+                    break;
             }
         }
-        if(Input.GetKeyDown(KeyCode.P) && HavePowerUp && !usingPowerUs && gameObject.layer == 7)
+        if(Input.GetKeyDown(KeyCode.Keypad0) && HavePowerUp && !usingPowerUs && gameObject.layer == 7)
         {
             type = (int)PowerUp.type;
             HavePowerUp = false;
@@ -181,9 +196,23 @@ public class InventoryPowerUps : MonoBehaviour
                     }
                     Clone.Clear();
                     break;
+
+                case 4:
+                    break;
+
+                case 5:
+                    usingPowerUs = false;
+                    break;
             }
         }
     }
 
-
+    private void OnDrawGizmos()
+    {
+        Vector2 playerPos = transform.position;
+        Vector2 playerDirection = transform.up;
+        float spawnDistance = 1f;
+        Vector2 spawnPos = playerPos + playerDirection * (spawnDistance * 3);
+        Gizmos.DrawLine(transform.position, spawnPos);
+    }
 }
