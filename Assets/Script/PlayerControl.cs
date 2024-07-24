@@ -30,7 +30,7 @@ public class PlayerControl : MonoBehaviour
     public float turning = 0.5f;
     [SerializeField] private float minimumSpeedForBounce = 5.0f;
     public float maxBounceTime = 1.0f;
-    [SerializeField] private Player player;
+    public Player player;
     private bool isExplosion;
 
     [SerializeField] private GameObject trailSpawnPoint1;
@@ -121,7 +121,7 @@ public class PlayerControl : MonoBehaviour
 
         if (Vector3.Distance(transform.position, lastSpawnPosition) >= spawnDistance)
         {
-            //SpawnSprite();
+            SpawnSprite();
             lastSpawnPosition = transform.position;
         }
     }

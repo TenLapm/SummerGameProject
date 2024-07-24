@@ -14,7 +14,7 @@ public class InventoryPowerUps : MonoBehaviour
     private int type;
     private PowerUps PowerUp;
     private float duration;
-    private Transform scale;
+    private Vector3 scale;
     private SpawnPointPowerUps spawnPointPowerUps;
     private List<GameObject> Clone = new List<GameObject>();
     private GameObject Gclone;
@@ -40,7 +40,14 @@ public class InventoryPowerUps : MonoBehaviour
             HavePowerUp = true;
             PowerUp = other.GetComponent<PowerUpUi>().Powerup;
             spawnPointPowerUps = other.GetComponent<PowerUpUi>().count;
-            Gclone = PowerUp.Clone;
+            if(playerControl.player == Player.PlayerA)
+            {
+                Gclone = PowerUp.Clone[0];
+            }
+            else if (playerControl.player == Player.PlayerB)
+            {
+                Gclone = PowerUp.Clone[1];
+            }
             spawnPointPowerUps.count--;
             instant = other.GetComponent<PowerUpUi>().instant;
             Destroy(other.gameObject);
@@ -60,7 +67,7 @@ public class InventoryPowerUps : MonoBehaviour
                     break;
                 case 1:
                     duration = PowerUp.duration;
-                    scale = transform;
+                    scale = transform.localScale;
                     transform.localScale = new Vector3(PowerUp.scale, PowerUp.scale, PowerUp.scale);
                     usingPowerUs = true;
                     break;
@@ -95,7 +102,7 @@ public class InventoryPowerUps : MonoBehaviour
                     break;
                 case 1:
                     duration = PowerUp.duration;
-                    scale = transform;
+                    scale = transform.localScale;
                     transform.localScale = new Vector3(3f, 3f, 3f);
                     usingPowerUs = true;
                     break;
@@ -124,7 +131,6 @@ public class InventoryPowerUps : MonoBehaviour
                     for (float i = 0; i < PowerUp.scale; i++)
                     {
                         Vector3 spawnPos = playerPos + playerDirection * (spawnDistance + (i/2));
-                        Debug.Log(playerDirection);
                         GameObject newJam = Instantiate(Jam, spawnPos, Quaternion.identity);
                     }
                     usingPowerUs = true;
@@ -141,7 +147,7 @@ public class InventoryPowerUps : MonoBehaviour
                     break;
                 case 1:
                     duration = PowerUp.duration;
-                    scale = transform;
+                    scale = transform.localScale;
                     transform.localScale = new Vector3(3f, 3f, 3f);
                     usingPowerUs = true;
                     break;
@@ -181,7 +187,7 @@ public class InventoryPowerUps : MonoBehaviour
                 case 0:
                     break;
                 case 1:
-                    transform.localScale = new Vector3(1f, 1f, 1f);
+                    transform.localScale = scale;
                     usingPowerUs = false;
                     break;
                 case 2:
