@@ -12,8 +12,20 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        SoundManager.PlaySound(SoundManager.Sound.Back);
-        SoundManager.PlaySound(SoundManager.Sound.TestSound);
+        int rand = Random.Range(0, 3);
+        if (rand == 0)
+        {
+            SoundManager.PlaySound(SoundManager.Sound.BGM1);
+        }
+        else if (rand == 1)
+        {
+            SoundManager.PlaySound(SoundManager.Sound.BGM2);
+        }
+        else
+        {
+            SoundManager.PlaySound(SoundManager.Sound.BGM3);
+        }
+
         gridManager = FindObjectOfType<GridManager>();
         timer = FindObjectOfType<Timer>();
     }
