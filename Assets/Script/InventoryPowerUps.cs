@@ -60,7 +60,7 @@ public class InventoryPowerUps : MonoBehaviour
 
     public void UsingPowerUps()
     {
-        if(instant == 1 && HavePowerUp)
+        if(instant == 1 && HavePowerUp && !usingPowerUs)
         {
             type = (int)PowerUp.type;
             HavePowerUp = false;
@@ -169,6 +169,18 @@ public class InventoryPowerUps : MonoBehaviour
                         GameObject c = Instantiate(Gclone, transform.position, Quaternion.Euler(new Vector3(0, 0, (axisz * (i + 1)) + transform.rotation.eulerAngles.z)));
                         duration = PowerUp.duration;
                         Clone.Add(c);
+                    }
+                    usingPowerUs = true;
+                    break;
+                case 5:
+                    Vector3 playerPos = transform.position;
+                    Vector3 playerDirection = transform.up;
+                    float spawnDistance = 1f;
+
+                    for (float i = 0; i < PowerUp.scale; i++)
+                    {
+                        Vector3 spawnPos = playerPos + playerDirection * (spawnDistance + (i / 2));
+                        GameObject newJam = Instantiate(Jam, spawnPos, Quaternion.identity);
                     }
                     usingPowerUs = true;
                     break;

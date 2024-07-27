@@ -188,7 +188,7 @@ MonoBehaviour:
   HavePowerUp: 0
   usingPowerUs: 0
   Explosion: {fileID: 1028129361691129504}
-  Jam: {fileID: 1043560398966371887}
+  Jam: {fileID: 8425058719138339900, guid: fc044830e8331d149b46fafb0c6db848, type: 3}
 --- !u!58 &4494416264631432049
 CircleCollider2D:
   m_ObjectHideFlags: 0

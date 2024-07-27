@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.77141404, b: 0.050943315, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -105,6 +105,7 @@ MonoBehaviour:
   count: {fileID: 0}
   scale: 0
   instant: 0
+  artwork: {fileID: 0}
   maxTimer: 200
 --- !u!58 &-5427885735880061136
 CircleCollider2D:
