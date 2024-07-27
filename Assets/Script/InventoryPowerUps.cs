@@ -40,13 +40,16 @@ public class InventoryPowerUps : MonoBehaviour
             HavePowerUp = true;
             PowerUp = other.GetComponent<PowerUpUi>().Powerup;
             spawnPointPowerUps = other.GetComponent<PowerUpUi>().count;
-            if(playerControl.player == Player.PlayerA)
+            if (PowerUp.type == powerUpType.Clone) 
             {
-                Gclone = PowerUp.Clone[0];
-            }
-            else if (playerControl.player == Player.PlayerB)
-            {
-                Gclone = PowerUp.Clone[1];
+                if (playerControl.player == Player.PlayerA)
+                {
+                    Gclone = PowerUp.Clone[0];
+                }
+                else if (playerControl.player == Player.PlayerB)
+                {
+                    Gclone = PowerUp.Clone[1];
+                } 
             }
             spawnPointPowerUps.count--;
             instant = other.GetComponent<PowerUpUi>().instant;
