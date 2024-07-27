@@ -5,9 +5,22 @@ public static class SoundManager
 {
     public enum Sound
     {
-        TestSound,
+        BGM1,
+        BGM2,
+        BGM3,
+        Blast,
+        Blast2,
+        Click,
+        Expand,
+        MainMenuBGM,
+        MapSelectBGM,
+        MapSelectBGM2,
+        Boop,
+        Puke,
+        TimeStart,
+        TimeEnd,
+        WinBGM,
         PlayerMove,
-        Back
     }
 
     private static Dictionary<Sound, float> soundTimerDictionary;

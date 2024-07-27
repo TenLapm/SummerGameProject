@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6403127184579591184}
-  - component: {fileID: 4501094609083544023}
+  - component: {fileID: -7001627102696609905}
   m_Layer: 0
   m_Name: GameAssets
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4501094609083544023
+--- !u!114 &-7001627102696609905
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,9 +45,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundAudioClipArray:
-  - sound: 2
-    audioClip: {fileID: 8300000, guid: 97f053e08fb70a042a66bae3bd881cfb, type: 3}
-    soundType: 0
   - sound: 0
-    audioClip: {fileID: 8300000, guid: 5893aa031bb07bd489a0f47552e89778, type: 3}
+    audioClip: {fileID: 8300000, guid: 579661ceb3b41214bb543e9afe9ae373, type: 3}
+    soundType: 0
+  - sound: 1
+    audioClip: {fileID: 8300000, guid: 1c0eb56aede758e48b73ef827e534621, type: 3}
+    soundType: 0
+  - sound: 2
+    audioClip: {fileID: 8300000, guid: 2be98300ab5d12c4f85d88c3b6ba7949, type: 3}
+    soundType: 0
+  - sound: 7
+    audioClip: {fileID: 8300000, guid: d81dcdde058d42042a48b47dc01eb7ed, type: 3}
+    soundType: 0
+  - sound: 8
+    audioClip: {fileID: 8300000, guid: d78a56b3735a37c41a539f9727379e90, type: 3}
+    soundType: 0
+  - sound: 9
+    audioClip: {fileID: 8300000, guid: 600878ad8c126b548b3281bfc1c2b4b3, type: 3}
+    soundType: 0
+  - sound: 10
+    audioClip: {fileID: 8300000, guid: 57e2511325bfe314caa00b5fd6ee6cd3, type: 3}
     soundType: 1
+  - sound: 11
+    audioClip: {fileID: 8300000, guid: 2f97f3be58020f7438cd9f49924f82fc, type: 3}
+    soundType: 1
+  - sound: 12
+    audioClip: {fileID: 8300000, guid: 19612c1b2c1d75145bdaa88833bc4f5b, type: 3}
+    soundType: 1
+  - sound: 13
+    audioClip: {fileID: 8300000, guid: ffd13e8d4c45555478ade9e222b64824, type: 3}
+    soundType: 0
+  - sound: 14
+    audioClip: {fileID: 8300000, guid: f718d0f4b4d57764999702189961659c, type: 3}
+    soundType: 0

@@ -191,8 +191,8 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: -2070315331, guid: 7376996171d1bb847b715ba220bdf880, type: 3}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 1871537839, guid: 7376996171d1bb847b715ba220bdf880, type: 3}
+    m_SelectedSprite: {fileID: -2070315331, guid: 7376996171d1bb847b715ba220bdf880, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -323,8 +323,8 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 833277805, guid: 7376996171d1bb847b715ba220bdf880, type: 3}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: -484293219, guid: 7376996171d1bb847b715ba220bdf880, type: 3}
+    m_SelectedSprite: {fileID: 833277805, guid: 7376996171d1bb847b715ba220bdf880, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -339,7 +339,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1402850269}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: MapSelect
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -690,8 +690,8 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 1102437110, guid: 7376996171d1bb847b715ba220bdf880, type: 3}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 982668132, guid: 7376996171d1bb847b715ba220bdf880, type: 3}
+    m_SelectedSprite: {fileID: 1102437110, guid: 7376996171d1bb847b715ba220bdf880, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -941,8 +941,8 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 404233805, guid: 7376996171d1bb847b715ba220bdf880, type: 3}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: -1750911667, guid: 7376996171d1bb847b715ba220bdf880, type: 3}
+    m_SelectedSprite: {fileID: 404233805, guid: 7376996171d1bb847b715ba220bdf880, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
