@@ -17,6 +17,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5899278393697963769, guid: bfcf6ed51b6747b4c9a0b3ef6176b45b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5899278393697963769, guid: bfcf6ed51b6747b4c9a0b3ef6176b45b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5899278393697963769, guid: bfcf6ed51b6747b4c9a0b3ef6176b45b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.8
       objectReference: {fileID: 0}
@@ -58,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9149817192885560400, guid: bfcf6ed51b6747b4c9a0b3ef6176b45b, type: 3}
       propertyPath: m_Name
-      value: CloneA Variant
+      value: CloneA
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3779242067948903695, guid: bfcf6ed51b6747b4c9a0b3ef6176b45b, type: 3}
@@ -98,4 +106,11 @@ MonoBehaviour:
   maxBounceTime: 1
   player: 0
   playerObject: {fileID: 9149817192885560400, guid: bfcf6ed51b6747b4c9a0b3ef6176b45b, type: 3}
-  brushRadius: 1.5
+  trailSpawnPoint1: {fileID: 0}
+  trailSpawnPoint2: {fileID: 0}
+  trailSpawnPoint3: {fileID: 0}
+  spritePrefab1: {fileID: 0}
+  spritePrefab2: {fileID: 0}
+  spritePrefab3: {fileID: 0}
+  brushRadius: 1
+  spawnDistance: 5
