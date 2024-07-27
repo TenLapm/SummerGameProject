@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Bomb
   type: 2
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: 9ea5fe37b8cd69541851a16310485384, type: 3}
   duration: 3
   scale: 2
-  Clone: {fileID: 0}
+  Clone:
+  - {fileID: 0}
   instant: 2

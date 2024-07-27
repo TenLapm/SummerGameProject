@@ -92,8 +92,6 @@ public class CloneMovement : MonoBehaviour
             SpawnSprite();
             lastSpawnPosition = transform.position;
         }
-        Debug.Log(transform.position);
-        Debug.Log(lastSpawnPosition);
     }
     private void Moving()
     {

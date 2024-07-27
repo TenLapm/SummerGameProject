@@ -11,7 +11,9 @@ public class PowerUpUi : MonoBehaviour
     public SpawnPointPowerUps count;
     public float scale;
     public int instant;
+    public Sprite artwork;
     private float timer;
+    private SpriteRenderer m_SpriteRenderer;
     [Header("LifeTime")]
     [SerializeField] private float maxTimer;
 
@@ -24,6 +26,9 @@ public class PowerUpUi : MonoBehaviour
         scale = (float)Powerup.scale;
         instant = (int)Powerup.instant;
         timer = maxTimer;
+        m_SpriteRenderer = GetComponentInParent<SpriteRenderer>();
+        artwork = Powerup.artwork;
+        m_SpriteRenderer.sprite = artwork;
     }
 
     // Update is called once per frame
