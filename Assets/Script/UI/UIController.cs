@@ -8,16 +8,23 @@ public class UIController : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("Map1");
+        SceneManager.LoadScene("MapSelect");
     }
 
     public void ExitGame()
     {
         Application.Quit();
     }
-
-    public void MapSelect()
+    public void Map1()
     {
-        SceneManager.LoadScene("MapSelect");
+        SceneManager.LoadScene("Map1");
+    }
+    public void Map2()
+    {
+        SceneManager.LoadScene("Map2");
+    }
+    public void Map3()
+    {
+        SceneManager.LoadScene("Map3");
     }
 }

@@ -6,9 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TestPlayerMovement.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 5bde4d8d8b3b01b44aeedd4ea0c91e2a
+  - enabled: 1
+    path: Assets/Scenes/MapSelect.unity
+    guid: c6407c9e4b0ec47479c6ff2e4fee801a
+  - enabled: 1
+    path: Assets/Scenes/Map_1.unity
+    guid: 954396192c8260b418a9cc30f1d52e3e
+  - enabled: 1
+    path: Assets/Scenes/Map_2.unity
+    guid: bf0e5bd58dba3714ba609a268bc9e308
+  - enabled: 1
+    path: Assets/Scenes/Map_3.unity
+    guid: 736c264fda951204f817e3d2a0d18136
   m_configObjects: {}
