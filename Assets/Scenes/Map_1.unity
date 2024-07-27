@@ -868,7 +868,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8015289328942119885, guid: b24fd8c8bb317094bb9aa22efb081776, type: 3}
       propertyPath: setTime
-      value: 60
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1462551268577368347, guid: b24fd8c8bb317094bb9aa22efb081776, type: 3}
       propertyPath: m_Pivot.x

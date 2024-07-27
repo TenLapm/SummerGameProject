@@ -8,12 +8,21 @@ public class UIController : MonoBehaviour
 {
     private void Start()
     {
-        if(SceneManager.GetActiveScene().buildIndex == 0)
+        if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             SoundManager.PlaySound(SoundManager.Sound.MainMenuBGM);
-        }else if (SceneManager.GetActiveScene().buildIndex == 1)
+        } else if (SceneManager.GetActiveScene().buildIndex == 1)
         {
-            SoundManager.PlaySound(SoundManager.Sound.MapSelectBGM);
+            int rand = Random.Range(0, 2);
+            if (rand == 0)
+            {
+                SoundManager.PlaySound(SoundManager.Sound.MapSelectBGM);
+            }
+            else
+            {
+                SoundManager.PlaySound(SoundManager.Sound.MapSelectBGM2);
+            }
+            
         }
 
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,20 +11,21 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public bool playerBWin = false;
     [HideInInspector] public bool GameEnded = false;
 
+    private AudioSource bgmAudioSource;
+
     void Start()
     {
-        int rand = Random.Range(0, 3);
-        if (rand == 0)
+        if (SceneManager.GetActiveScene().buildIndex == 2)
         {
-            SoundManager.PlaySound(SoundManager.Sound.BGM1);
+            bgmAudioSource = SoundManager.PlaySound(SoundManager.Sound.BGM1);
         }
-        else if (rand == 1)
+        else if (SceneManager.GetActiveScene().buildIndex == 3)
         {
-            SoundManager.PlaySound(SoundManager.Sound.BGM2);
+            bgmAudioSource = SoundManager.PlaySound(SoundManager.Sound.BGM2);
         }
-        else
+        else if (SceneManager.GetActiveScene().buildIndex == 4)
         {
-            SoundManager.PlaySound(SoundManager.Sound.BGM3);
+            bgmAudioSource = SoundManager.PlaySound(SoundManager.Sound.BGM3);
         }
 
         gridManager = FindObjectOfType<GridManager>();
@@ -32,12 +34,13 @@ public class GameManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(timer.CurrentTime <= 0)
+        if (timer.CurrentTime <= 0 && !GameEnded)
         {
-            if(gridManager.PlayerAPercent > gridManager.PlayerBPercent)
+            if (gridManager.PlayerAPercent > gridManager.PlayerBPercent)
             {
                 playerAWin = true;
-            }else if(gridManager.PlayerBPercent > gridManager.PlayerAPercent)
+            }
+            else if (gridManager.PlayerBPercent > gridManager.PlayerAPercent)
             {
                 playerBWin = true;
             }
@@ -46,7 +49,16 @@ public class GameManager : MonoBehaviour
                 Application.Quit();
             }
             GameEnded = true;
+            StopBGM();
         }
     }
 
+    private void StopBGM()
+    {
+        if (bgmAudioSource != null)
+        {
+            bgmAudioSource.Stop();
+            Destroy(bgmAudioSource.gameObject);
+        }
+    }
 }

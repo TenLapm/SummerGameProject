@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class DestroySound : MonoBehaviour
 {
+    GameManager gameManager;
     public float delay = 180;
-
+    private void Awake()
+    {
+        gameManager = FindObjectOfType<GameManager>(); 
+    }
     private void Start()
     {
         delay = 180;

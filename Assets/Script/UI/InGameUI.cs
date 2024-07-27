@@ -23,6 +23,7 @@ public class InGameUI : MonoBehaviour
 
     void Start()
     {
+
         Interface.SetActive(true);
         timer = GetComponent<Timer>();
         gameManager = FindObjectOfType<GameManager>();
@@ -97,11 +98,12 @@ public class InGameUI : MonoBehaviour
     public void GameEnd()
     {
         StartCoroutine(Transitioning(1));
-        if (donefade) { 
+        if (donefade) {
+            
             PauseMenu.SetActive(false);
             Interface.SetActive(false);
             Time.timeScale = 1.0f;
-
+            SoundManager.PlaySound(SoundManager.Sound.WinBGM);
             if (gameManager.playerAWin)
             {
                 PlayerAWin.SetActive(true);

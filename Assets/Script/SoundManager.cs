@@ -24,6 +24,7 @@ public static class SoundManager
     }
 
     private static Dictionary<Sound, float> soundTimerDictionary;
+    private static GameObject winBGMGameObject;
 
     public static void Initialize()
     {
@@ -31,11 +32,31 @@ public static class SoundManager
         soundTimerDictionary[Sound.PlayerMove] = 0f;
     }
 
-    public static void PlaySound(Sound sound)
+    public static AudioSource PlaySound(Sound sound)
     {
         if (CanPlaySound(sound))
         {
-            GameObject soundGameObject = new GameObject("Sound");
+            GameObject soundGameObject = null;
+
+            if (sound == Sound.WinBGM)
+            {
+                // Check if WinBGM GameObject already exists
+                if (winBGMGameObject == null)
+                {
+                    winBGMGameObject = new GameObject("WinBGM");
+                    soundGameObject = winBGMGameObject;
+                }
+                else
+                {
+                    // WinBGM GameObject already exists, no need to create a new one
+                    return null;
+                }
+            }
+            else
+            {
+                // Create a new GameObject for other sounds
+                soundGameObject = new GameObject("Sound");
+            }
 
             var soundType = GetSoundType(sound);
             soundGameObject.tag = soundType == GameAssets.SoundType.BGM ? "BGM" : "SoundEffect";
@@ -45,7 +66,10 @@ public static class SoundManager
             DestroySound destroySound = soundGameObject.AddComponent<DestroySound>();
             destroySound.delay = 20f;
             audioSource.PlayOneShot(GetAudioClip(sound));
+
+            return audioSource;
         }
+        return null;
     }
 
     private static bool CanPlaySound(Sound sound)
