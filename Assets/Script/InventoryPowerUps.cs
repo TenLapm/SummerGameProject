@@ -34,7 +34,7 @@ public class InventoryPowerUps : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "PowerUp" && !HavePowerUp)
+        if (other.tag == "PowerUp" && !HavePowerUp && !usingPowerUs)
         {
             Debug.Log("Pickup");
             HavePowerUp = true;
