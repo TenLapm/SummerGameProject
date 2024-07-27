@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1112356556498825798}
   m_Layer: 0
   m_Name: SpawnPointPowerUp
-  m_TagString: Untagged
+  m_TagString: SPPU
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public enum powerUpType
 {
-    Default, UpSize, Explosion, Clone, 
+    Default, UpSize, Explosion, Clone, JamBomb, JamShot
 }
+
 
 public enum Instant
 {
@@ -22,6 +23,6 @@ public class PowerUps : ScriptableObject
     public Sprite artwork;
     public float duration;
     public float scale;
-    public GameObject Clone;
+    public List<GameObject> Clone = new List<GameObject>();
     public Instant instant;
 }

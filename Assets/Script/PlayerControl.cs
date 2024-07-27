@@ -30,7 +30,7 @@ public class PlayerControl : MonoBehaviour
     public float turning = 0.5f;
     [SerializeField] private float minimumSpeedForBounce = 5.0f;
     public float maxBounceTime = 1.0f;
-    [SerializeField] private Player player;
+    public Player player;
     private bool isExplosion;
 
     [SerializeField] private GameObject trailSpawnPoint1;
@@ -300,9 +300,6 @@ public class PlayerControl : MonoBehaviour
                 Quaternion rotationZ = Quaternion.LookRotation(Vector3.forward, direction);
                 transform.rotation = rotationZ;
                 spiningSpeed = (speed - minimumSpeedForBounce) / 0.5f;
-                //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                //Quaternion rotationZ = Quaternion.LookRotation(Vector3.forward, direction);
-                //transform.rotation = rotationZ;
                 isBouncing = true;
                 bounceTime = maxBounceTime;
             }
@@ -345,14 +342,12 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    private void SpawnSprite()
+    public void SpawnSprite()
     {
         GameObject selectedPrefab = GetRandomSpritePrefab();
         Vector3 spawnPoint = GetRandomSpawnPoint();
-
         SpriteRenderer spriteRenderer = selectedPrefab.GetComponent<SpriteRenderer>();
         spriteRenderer.sortingOrder = Mathf.RoundToInt(Time.time * 100);
-
         Instantiate(selectedPrefab, spawnPoint, Quaternion.identity);
     }
 

@@ -26,9 +26,18 @@ public class CloneMovement : MonoBehaviour
     [SerializeField] private Player player;
     [SerializeField] private GameObject playerObject;
 
+    [SerializeField] private GameObject trailSpawnPoint1;
+    [SerializeField] private GameObject trailSpawnPoint2;
+    [SerializeField] private GameObject trailSpawnPoint3;
 
+    [SerializeField] private GameObject spritePrefab1;
+    [SerializeField] private GameObject spritePrefab2;
+    [SerializeField] private GameObject spritePrefab3;
     public float brushRadius;
     private GridManager gridManager;
+
+    [SerializeField] private float spawnDistance = 5.0f;
+    private Vector3 lastSpawnPosition;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -37,6 +46,7 @@ public class CloneMovement : MonoBehaviour
         turning = playerControl.turning;
         maxBounceTime = playerControl.maxBounceTime;
         circleCollider = GetComponent<CircleCollider2D>();
+        lastSpawnPosition = transform.position;
     }
 
 
@@ -58,11 +68,6 @@ public class CloneMovement : MonoBehaviour
 
         if (isBouncing)
         {
-            if (speed > 0.0f)
-                if (speed > 0.0f)
-                {
-                    
-                }
             bounceTime -= Time.deltaTime;
             gameObject.transform.Rotate(0.0f, 0.0f, -spiningSpeed);
             Moving();
@@ -74,13 +79,21 @@ public class CloneMovement : MonoBehaviour
             isHittingWall = false;
         }
 
-        
+
         if (gridManager != null)
         {
             Vector3 playerPosition = transform.position;
             Vector2Int gridPosition = gridManager.WorldToGridPosition(transform.position);
             gridManager.ChangeTileOwner(gridPosition, player, brushRadius);
         }
+
+        if (Vector3.Distance(transform.position, lastSpawnPosition) >= spawnDistance)
+        {
+            SpawnSprite();
+            lastSpawnPosition = transform.position;
+        }
+        Debug.Log(transform.position);
+        Debug.Log(lastSpawnPosition);
     }
     private void Moving()
     {
@@ -133,7 +146,46 @@ public class CloneMovement : MonoBehaviour
         }
     }
 
+    public void SpawnSprite()
+    {
+        GameObject selectedPrefab = GetRandomSpritePrefab();
+        Vector3 spawnPoint = GetRandomSpawnPoint();
+        SpriteRenderer spriteRenderer = selectedPrefab.GetComponent<SpriteRenderer>();
+        spriteRenderer.sortingOrder = Mathf.RoundToInt(Time.time * 100);
+        Instantiate(selectedPrefab, spawnPoint, Quaternion.identity);
+    }
 
+    private GameObject GetRandomSpritePrefab()
+    {
+        int randomIndex = Random.Range(0, 3);
+        switch (randomIndex)
+        {
+            case 0:
+                return spritePrefab1;
+            case 1:
+                return spritePrefab2;
+            case 2:
+                return spritePrefab3;
+            default:
+                return spritePrefab1;
+        }
+    }
+
+    private Vector3 GetRandomSpawnPoint()
+    {
+        int randomIndex = Random.Range(0, 3);
+        switch (randomIndex)
+        {
+            case 0:
+                return trailSpawnPoint1.transform.position;
+            case 1:
+                return trailSpawnPoint2.transform.position;
+            case 2:
+                return trailSpawnPoint3.transform.position;
+            default:
+                return trailSpawnPoint1.transform.position;
+        }
+    }
     private Vector2Int WorldToGridPosition(Vector3 worldPosition)
     {
         float gridWidth = gridManager.cols * gridManager.tileSize;
