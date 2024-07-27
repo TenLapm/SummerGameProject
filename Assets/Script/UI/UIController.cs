@@ -6,8 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
+    public GameObject SettingPanel;
+
     private void Start()
     {
+        SettingPanel.SetActive(false);
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             SoundManager.PlaySound(SoundManager.Sound.MainMenuBGM);
@@ -50,5 +53,13 @@ public class UIController : MonoBehaviour
     public void Mapa3()
     {
         SceneManager.LoadScene("Mapa3");
+    }
+    public void SettingOn()
+    {
+        SettingPanel.SetActive(true);
+    }
+    public void SettingOff()
+    {
+        SettingPanel.SetActive(false);
     }
 }
