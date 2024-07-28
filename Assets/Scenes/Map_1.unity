@@ -321,6 +321,10 @@ PrefabInstance:
       value: Map_1_Obstacle06 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7955159566268401672, guid: e8c192e8c43187b4789a055f3230b495, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7955159566268401672, guid: e8c192e8c43187b4789a055f3230b495, type: 3}
       propertyPath: m_TagString
       value: Wall
       objectReference: {fileID: 0}
@@ -394,6 +398,10 @@ PrefabInstance:
       value: Map_1_Obstacle06 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 7955159566268401672, guid: e8c192e8c43187b4789a055f3230b495, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7955159566268401672, guid: e8c192e8c43187b4789a055f3230b495, type: 3}
       propertyPath: m_TagString
       value: Wall
       objectReference: {fileID: 0}
@@ -419,18 +427,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnPointPowerUp (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 951693855868717157, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
       propertyPath: PowerUp.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
       propertyPath: PowerUp.Array.data[0]
       value: 
-      objectReference: {fileID: 8917208418784984139, guid: 2144271f6fb7ebd4c83e1c7079cdda61, type: 3}
+      objectReference: {fileID: 2750863981230489023, guid: dd7b42583e4a97b4fa4505bae57b39d7, type: 3}
     - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
       propertyPath: PowerUp.Array.data[1]
       value: 
-      objectReference: {fileID: 6624088709044204694, guid: 89501e5fe2b13ee4b85f34bede2ac4bf, type: 3}
+      objectReference: {fileID: 9025755198874920527, guid: 41ea1ed4d90324748b21f61d40ad2f77, type: 3}
     - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
       propertyPath: PowerUp.Array.data[2]
       value: 
@@ -498,28 +510,76 @@ PrefabInstance:
       value: SpawnPointPowerUp
       objectReference: {fileID: 0}
     - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
+      propertyPath: axisX
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
+      propertyPath: axisY
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
+      propertyPath: limit
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
+      propertyPath: maxTimer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
       propertyPath: PowerUp.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
       propertyPath: PowerUp.Array.data[0]
       value: 
-      objectReference: {fileID: 8917208418784984139, guid: 2144271f6fb7ebd4c83e1c7079cdda61, type: 3}
+      objectReference: {fileID: 2750863981230489023, guid: dd7b42583e4a97b4fa4505bae57b39d7, type: 3}
     - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
       propertyPath: PowerUp.Array.data[1]
       value: 
-      objectReference: {fileID: 6624088709044204694, guid: 89501e5fe2b13ee4b85f34bede2ac4bf, type: 3}
+      objectReference: {fileID: 8917208418784984139, guid: 2144271f6fb7ebd4c83e1c7079cdda61, type: 3}
     - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
       propertyPath: PowerUp.Array.data[2]
       value: 
       objectReference: {fileID: 9025755198874920527, guid: 41ea1ed4d90324748b21f61d40ad2f77, type: 3}
+    - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
+      propertyPath: PowerUp.Array.data[3]
+      value: 
+      objectReference: {fileID: 6624088709044204694, guid: 89501e5fe2b13ee4b85f34bede2ac4bf, type: 3}
+    - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
+      propertyPath: PowerUp.Array.data[4]
+      value: 
+      objectReference: {fileID: 5936384782072512144, guid: 1e2059a689f46e74586aa030d321e8cd, type: 3}
+    - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
+      propertyPath: ratePowerUp.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
+      propertyPath: ratePowerUp.Array.data[0]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
+      propertyPath: ratePowerUp.Array.data[1]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
+      propertyPath: ratePowerUp.Array.data[2]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
+      propertyPath: ratePowerUp.Array.data[3]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
+      propertyPath: ratePowerUp.Array.data[4]
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3314273616676505158, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.85
       objectReference: {fileID: 0}
     - target: {fileID: 3314273616676505158, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.19
       objectReference: {fileID: 0}
     - target: {fileID: 3314273616676505158, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -834,18 +894,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnPointPowerUp (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 951693855868717157, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
       propertyPath: PowerUp.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
       propertyPath: PowerUp.Array.data[0]
       value: 
-      objectReference: {fileID: 8917208418784984139, guid: 2144271f6fb7ebd4c83e1c7079cdda61, type: 3}
+      objectReference: {fileID: 2750863981230489023, guid: dd7b42583e4a97b4fa4505bae57b39d7, type: 3}
     - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
       propertyPath: PowerUp.Array.data[1]
       value: 
-      objectReference: {fileID: 6624088709044204694, guid: 89501e5fe2b13ee4b85f34bede2ac4bf, type: 3}
+      objectReference: {fileID: 9025755198874920527, guid: 41ea1ed4d90324748b21f61d40ad2f77, type: 3}
     - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
       propertyPath: PowerUp.Array.data[2]
       value: 
@@ -999,18 +1063,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnPointPowerUp (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 951693855868717157, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
       propertyPath: PowerUp.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
       propertyPath: PowerUp.Array.data[0]
       value: 
-      objectReference: {fileID: 8917208418784984139, guid: 2144271f6fb7ebd4c83e1c7079cdda61, type: 3}
+      objectReference: {fileID: 2750863981230489023, guid: dd7b42583e4a97b4fa4505bae57b39d7, type: 3}
     - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
       propertyPath: PowerUp.Array.data[1]
       value: 
-      objectReference: {fileID: 6624088709044204694, guid: 89501e5fe2b13ee4b85f34bede2ac4bf, type: 3}
+      objectReference: {fileID: 9025755198874920527, guid: 41ea1ed4d90324748b21f61d40ad2f77, type: 3}
     - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
       propertyPath: PowerUp.Array.data[2]
       value: 
@@ -1087,6 +1155,10 @@ PrefabInstance:
     - target: {fileID: 1391876971533294207, guid: 9d527dd2542caa04caffe07ef74f27b7, type: 3}
       propertyPath: m_Name
       value: Map_1_Obstacle01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1391876971533294207, guid: 9d527dd2542caa04caffe07ef74f27b7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1391876971533294207, guid: 9d527dd2542caa04caffe07ef74f27b7, type: 3}
       propertyPath: m_TagString
@@ -1198,7 +1270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9e99e3541d90e4086ca4d65f9b965f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  globeCount: 4
+  globeCount: 100
 --- !u!4 &1648745834
 Transform:
   m_ObjectHideFlags: 0
@@ -1397,6 +1469,10 @@ PrefabInstance:
     - target: {fileID: 5980115230879022312, guid: b24fd8c8bb317094bb9aa22efb081776, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5980115230879022312, guid: b24fd8c8bb317094bb9aa22efb081776, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6505434393013382917, guid: b24fd8c8bb317094bb9aa22efb081776, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1674,6 +1750,10 @@ PrefabInstance:
       value: Map_1_Obstacle06
       objectReference: {fileID: 0}
     - target: {fileID: 7955159566268401672, guid: e8c192e8c43187b4789a055f3230b495, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7955159566268401672, guid: e8c192e8c43187b4789a055f3230b495, type: 3}
       propertyPath: m_TagString
       value: Wall
       objectReference: {fileID: 0}
@@ -1872,6 +1952,10 @@ PrefabInstance:
     - target: {fileID: 1391876971533294207, guid: 9d527dd2542caa04caffe07ef74f27b7, type: 3}
       propertyPath: m_Name
       value: Map_1_Obstacle01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1391876971533294207, guid: 9d527dd2542caa04caffe07ef74f27b7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1391876971533294207, guid: 9d527dd2542caa04caffe07ef74f27b7, type: 3}
       propertyPath: m_TagString
