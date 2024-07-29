@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 using UnityEngine.UIElements.Experimental;
 //using static UnityEditor.PlayerSettings;
 
@@ -11,6 +13,9 @@ public class InventoryPowerUps : MonoBehaviour
     public bool HavePowerUp = false;
     public bool usingPowerUs = false;
     [SerializeField] private CircleCollider2D Explosion;
+    [SerializeField] private Animator animator;
+    [SerializeField] private GameObject EfxObject;
+    [SerializeField] private Rigidbody2D efxRigi;
     private int type;
     private PowerUps PowerUp;
     private float duration;
@@ -21,6 +26,9 @@ public class InventoryPowerUps : MonoBehaviour
     [SerializeField] private GameObject Jam;
     private int instant;
     private PlayerControl playerControl;
+    private bool once = true;
+    private float animTime = 0.3f;
+    private Vector3 nowPos;
     void Start()
     {
         playerControl = GetComponent<PlayerControl>();
@@ -30,6 +38,7 @@ public class InventoryPowerUps : MonoBehaviour
     {
         UsingPowerUps();
         PowerUpsDuration();
+        anim();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -60,7 +69,7 @@ public class InventoryPowerUps : MonoBehaviour
 
     public void UsingPowerUps()
     {
-        if(instant == 1 && HavePowerUp && !usingPowerUs)
+        if(instant == 1)
         {
             type = (int)PowerUp.type;
             HavePowerUp = false;
@@ -90,8 +99,14 @@ public class InventoryPowerUps : MonoBehaviour
                     break;
                     
                 case 4:
-                    GameObject newJam = Instantiate(Jam, transform.position, Quaternion.identity);
-                    newJam.transform.localScale = new Vector3(PowerUp.scale, PowerUp.scale, PowerUp.scale);
+                    efxRigi.constraints = RigidbodyConstraints2D.FreezeAll;
+                    EfxObject.transform.SetParent(null);
+                    nowPos = transform.position;
+                    EfxObject.transform.position = nowPos;
+                    animator.SetBool("IsJamExplosion", true);
+                    once = false;
+                    usingPowerUs = true;
+                    animTime = 0.25f;
                     break;
             }
         }
@@ -110,10 +125,16 @@ public class InventoryPowerUps : MonoBehaviour
                     usingPowerUs = true;
                     break;
                 case 2:
+                    efxRigi.simulated = false;
+                    efxRigi.constraints = RigidbodyConstraints2D.None;
+                    EfxObject.transform.SetParent(transform, true);
+                    EfxObject.transform.position = transform.position;
+                    EfxObject.transform.rotation = EfxObject.transform.parent.rotation;
                     duration = PowerUp.duration;
                     Explosion.enabled = true;
                     usingPowerUs = true;
                     Explosion.radius = PowerUp.scale;
+                    animator.SetBool("IsExplosion", true);
                     break;
                 case 3:
                     
@@ -155,11 +176,16 @@ public class InventoryPowerUps : MonoBehaviour
                     usingPowerUs = true;
                     break;
                 case 2:
+                    efxRigi.simulated = false;
+                    efxRigi.constraints = RigidbodyConstraints2D.None;
+                    EfxObject.transform.SetParent(transform, true);
+                    EfxObject.transform.position = transform.position;
+                    EfxObject.transform.rotation = transform.rotation;
                     duration = PowerUp.duration;
                     Explosion.enabled = true;
                     usingPowerUs = true;
                     Explosion.radius = PowerUp.scale;
-                    
+                    animator.SetBool("IsExplosion", true);
                     break;
                 case 3:
 
@@ -190,7 +216,6 @@ public class InventoryPowerUps : MonoBehaviour
 
     public void PowerUpsDuration()
     {
-
         if (usingPowerUs)
         {
             duration -= Time.deltaTime;
@@ -202,12 +227,14 @@ public class InventoryPowerUps : MonoBehaviour
                 case 0:
                     break;
                 case 1:
+                    instant = 0;
                     transform.localScale = scale;
                     usingPowerUs = false;
                     break;
                 case 2:
                     Explosion.enabled = false;
                     usingPowerUs = false;
+                    animator.SetBool("IsExplosion", false);
                     break;
                 case 3:
                     usingPowerUs = false;
@@ -219,6 +246,9 @@ public class InventoryPowerUps : MonoBehaviour
                     break;
 
                 case 4:
+                    instant = 0;
+                    usingPowerUs = false;
+                    type = 0;
                     break;
 
                 case 5:
@@ -226,6 +256,27 @@ public class InventoryPowerUps : MonoBehaviour
                     break;
             }
         }
+    }
+
+    private void anim()
+    {
+        if (animTime > 0)
+        {
+            animTime -= Time.deltaTime;
+        }
+
+        if(animTime <= 0 && type == 0)
+        {
+            animator.SetBool("IsJamExplosion", false);
+            if (!once)
+            {
+                GameObject newJam = Instantiate(Jam, nowPos, Quaternion.Euler(new Vector3(0, 0, 0)));
+                newJam.transform.localScale = new Vector3(PowerUp.scale, PowerUp.scale, PowerUp.scale);
+                once = true;
+            }
+        }
+        
+        
     }
 
     private void OnDrawGizmos()

@@ -24,6 +24,7 @@ public class PlayerControl : MonoBehaviour
     private Vector3 direction;
     private float spiningSpeed;
     public float maxSpeed = 10.0f;
+    private Animator animator;
     [SerializeField] private float minimumSpeed = 0.0f;
     [SerializeField] private float upSpeed = 0.5f;
     [SerializeField] private float slowSpeed = 0.5f;
@@ -51,6 +52,7 @@ public class PlayerControl : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         gridManager = FindObjectOfType<GridManager>();
         lastSpawnPosition = transform.position;
+        animator = GetComponent<Animator>();
     }
 
 
@@ -87,6 +89,7 @@ public class PlayerControl : MonoBehaviour
 
         if (isBouncing)
         {
+            animator.SetBool("IsBounce", true);
             if (speed > 0.0f)
                 if (speed > 0.0f)
                 {
@@ -102,6 +105,7 @@ public class PlayerControl : MonoBehaviour
         {
             isBouncing = false;
             isHittingWall = false;
+            animator.SetBool("IsBounce", false);
         }
 
         if (speed < 0.0f)
@@ -110,6 +114,7 @@ public class PlayerControl : MonoBehaviour
             {
                 speed = 0.0f;
                 isBouncing = false;
+                animator.SetBool("IsBounce", false);
             }
         }
         if (gridManager != null)

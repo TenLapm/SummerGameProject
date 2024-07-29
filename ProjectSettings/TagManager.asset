@@ -56,6 +56,9 @@ TagManager:
   - name: Obstacle
     uniqueID: 1154551757
     locked: 0
+  - name: Power UpsEfx
+    uniqueID: 832775263
+    locked: 0
   - name: Player
     uniqueID: 1802548513
     locked: 0
