@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2079321492533717477}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TrailSpawnPoint 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7181436049711077631}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TrailSpawnPoint 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 7997661701242223982}
   - component: {fileID: -8956134634350046123}
   - component: {fileID: 6369851469836920647}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BulletJamshotB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4151235871189587517}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TrailSpawnPoint 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

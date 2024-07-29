@@ -61,7 +61,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1469184550918937538}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.30104867, w: -0.9536088}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.58, y: 4.95, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0}
   m_ConstrainProportionsScale: 0
@@ -72,7 +72,7 @@ Transform:
   - {fileID: 2081797215446383053}
   - {fileID: 2499156554774641550}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 395.04102}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8938971928667718163
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -195,6 +195,7 @@ MonoBehaviour:
   efxSprite: {fileID: 6484856644798568878}
   checkJamShot: {fileID: 0}
   Jam: {fileID: 8425058719138339900, guid: fc044830e8331d149b46fafb0c6db848, type: 3}
+  BulletJam: {fileID: 0}
   R: 255
   G: 255
   B: 255

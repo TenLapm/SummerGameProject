@@ -66,8 +66,34 @@ public class BulletJamShot : MonoBehaviour
         }
         if(collision.tag == "Player")
         {
-            inventoryPowerUp = collision.GetComponent<InventoryPowerUps>();
+            if (player != Player.PlayerA)
+            {
+                if (collision.gameObject.layer == 6)
+                {
+                    inventoryPowerUp.usingPowerUs = false;
+                    Destroy(gameObject);
+                }
+                else if(collision.gameObject.layer == 7) 
+                {
+                    inventoryPowerUp = collision.GetComponent<InventoryPowerUps>();
+                }
+            }
+            if (player != Player.PlayerB)
+            {
+                if (collision.gameObject.layer == 7)
+                {
+                    inventoryPowerUp.usingPowerUs = false;
+                    Destroy(gameObject);
+                }
+
+                else if (collision.gameObject.layer == 6)
+                {
+                    inventoryPowerUp = collision.GetComponent<InventoryPowerUps>();
+                }
+            }
+            
         }
+
     }
 
     public void SpawnSprite()
