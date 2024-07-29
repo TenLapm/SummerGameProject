@@ -6,6 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.UIElements.Experimental;
+using static UnityEditor.PlayerSettings;
 //using static UnityEditor.PlayerSettings;
 
 public class InventoryPowerUps : MonoBehaviour
@@ -16,6 +17,8 @@ public class InventoryPowerUps : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject EfxObject;
     [SerializeField] private Rigidbody2D efxRigi;
+    [SerializeField] private SpriteRenderer efxSprite;
+    [SerializeField] private BoxCollider2D checkJamShot;
     private int type;
     private PowerUps PowerUp;
     private float duration;
@@ -29,6 +32,11 @@ public class InventoryPowerUps : MonoBehaviour
     private bool once = true;
     private float animTime = 0.3f;
     private Vector3 nowPos;
+
+    [Header("Color Effect Clone")]
+    [SerializeField] int R = 255;
+    [SerializeField] int G = 255;
+    [SerializeField] int B = 255;
     void Start()
     {
         playerControl = GetComponent<PlayerControl>();
@@ -99,6 +107,7 @@ public class InventoryPowerUps : MonoBehaviour
                     break;
                     
                 case 4:
+                    efxSprite.color = Color.white;
                     efxRigi.constraints = RigidbodyConstraints2D.FreezeAll;
                     EfxObject.transform.SetParent(null);
                     nowPos = transform.position;
@@ -125,6 +134,7 @@ public class InventoryPowerUps : MonoBehaviour
                     usingPowerUs = true;
                     break;
                 case 2:
+                    efxSprite.color = Color.white;
                     efxRigi.simulated = false;
                     efxRigi.constraints = RigidbodyConstraints2D.None;
                     EfxObject.transform.SetParent(transform, true);
@@ -137,8 +147,15 @@ public class InventoryPowerUps : MonoBehaviour
                     animator.SetBool("IsExplosion", true);
                     break;
                 case 3:
-                    
-                    for(int i = 0; i < PowerUp.scale; i++)
+                    efxSprite.color = new Color(R, G, B);
+                    animTime = 0.25f;
+                    efxRigi.simulated = false;
+                    efxRigi.constraints = RigidbodyConstraints2D.None;
+                    EfxObject.transform.SetParent(transform, true);
+                    EfxObject.transform.position = transform.position;
+                    EfxObject.transform.rotation = transform.rotation;
+                    animator.SetBool("IsExplosion", true);
+                    for (int i = 0; i < PowerUp.scale; i++)
                     {
                         float axisz = (360.0f / (PowerUp.scale + 1));
                         GameObject c = Instantiate(Gclone, transform.position, Quaternion.Euler(new Vector3(0, 0, (axisz * (i + 1)) + transform.rotation.eulerAngles.z)));
@@ -155,6 +172,11 @@ public class InventoryPowerUps : MonoBehaviour
                     for (float i = 0; i < PowerUp.scale; i++)
                     {
                         Vector3 spawnPos = playerPos + playerDirection * (spawnDistance + (i/2));
+                        Collider2D collider = Physics2D.OverlapCircle(spawnPos, 0.1f);
+                        if (collider != null)
+                        {
+                            break;
+                        }
                         GameObject newJam = Instantiate(Jam, spawnPos, Quaternion.identity);
                     }
                     usingPowerUs = true;
@@ -176,6 +198,7 @@ public class InventoryPowerUps : MonoBehaviour
                     usingPowerUs = true;
                     break;
                 case 2:
+                    efxSprite.color = Color.white;
                     efxRigi.simulated = false;
                     efxRigi.constraints = RigidbodyConstraints2D.None;
                     EfxObject.transform.SetParent(transform, true);
@@ -188,7 +211,14 @@ public class InventoryPowerUps : MonoBehaviour
                     animator.SetBool("IsExplosion", true);
                     break;
                 case 3:
-
+                    efxSprite.color = new Color(R, G, B);
+                    animTime = 0.25f;
+                    efxRigi.simulated = false;
+                    efxRigi.constraints = RigidbodyConstraints2D.None;
+                    EfxObject.transform.SetParent(transform, true);
+                    EfxObject.transform.position = transform.position;
+                    EfxObject.transform.rotation = transform.rotation;
+                    animator.SetBool("IsExplosion", true);
                     for (int i = 0; i < PowerUp.scale; i++)
                     {
                         float axisz = (360.0f / (PowerUp.scale + 1));
@@ -242,6 +272,7 @@ public class InventoryPowerUps : MonoBehaviour
                     {
                         Destroy(Clone[i]);
                     }
+                    animator.SetBool("IsExplosion", false);
                     Clone.Clear();
                     break;
 
@@ -265,8 +296,9 @@ public class InventoryPowerUps : MonoBehaviour
             animTime -= Time.deltaTime;
         }
 
-        if(animTime <= 0 && type == 0)
+        if(animTime <= 0)
         {
+            animator.SetBool("IsExplosion", false);
             animator.SetBool("IsJamExplosion", false);
             if (!once)
             {
