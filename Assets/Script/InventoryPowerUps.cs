@@ -26,7 +26,9 @@ public class InventoryPowerUps : MonoBehaviour
     private SpawnPointPowerUps spawnPointPowerUps;
     private List<GameObject> Clone = new List<GameObject>();
     private GameObject Gclone;
+    private GameObject newJam;
     [SerializeField] private GameObject Jam;
+    [SerializeField] private GameObject BulletJam;
     private int instant;
     private PlayerControl playerControl;
     private bool once = true;
@@ -165,20 +167,23 @@ public class InventoryPowerUps : MonoBehaviour
                     usingPowerUs = true;
                     break;
                 case 5:
-                    Vector3 playerPos = transform.position;
-                    Vector3 playerDirection = transform.up;
-                    float spawnDistance = 1f;
-                    
-                    for (float i = 0; i < PowerUp.scale; i++)
-                    {
-                        Vector3 spawnPos = playerPos + playerDirection * (spawnDistance + (i/2));
-                        Collider2D collider = Physics2D.OverlapCircle(spawnPos, 0.1f);
-                        if (collider != null)
-                        {
-                            break;
-                        }
-                        GameObject newJam = Instantiate(Jam, spawnPos, Quaternion.identity);
-                    }
+                    //Vector3 playerPos = transform.position;
+                    //Vector3 playerDirection = transform.up;
+                    //float spawnDistance = 1f;
+
+                    //for (float i = 0; i < PowerUp.scale; i++)
+                    //{
+                    //    Vector3 spawnPos = playerPos + playerDirection * (spawnDistance + (i/2));
+                    //    Collider2D collider = Physics2D.OverlapCircle(spawnPos, 0.1f);
+                    //    if (collider != null)
+                    //    {
+                    //        break;
+                    //    }
+                    //    GameObject newJam = Instantiate(Jam, spawnPos, Quaternion.identity);
+                    //}
+                    duration = PowerUp.duration;
+                    newJam = Instantiate(BulletJam, transform.position, transform.rotation);
+                    newJam.transform.localScale = new Vector3(PowerUp.scale, PowerUp.scale, PowerUp.scale);
                     usingPowerUs = true;
                     break;
             }
@@ -229,15 +234,23 @@ public class InventoryPowerUps : MonoBehaviour
                     usingPowerUs = true;
                     break;
                 case 5:
-                    Vector3 playerPos = transform.position;
-                    Vector3 playerDirection = transform.up;
-                    float spawnDistance = 1f;
+                    //Vector3 playerPos = transform.position;
+                    //Vector3 playerDirection = transform.up;
+                    //float spawnDistance = 1f;
 
-                    for (float i = 0; i < PowerUp.scale; i++)
-                    {
-                        Vector3 spawnPos = playerPos + playerDirection * (spawnDistance + (i / 2));
-                        GameObject newJam = Instantiate(Jam, spawnPos, Quaternion.identity);
-                    }
+                    //for (float i = 0; i < PowerUp.scale; i++)
+                    //{
+                    //    Vector3 spawnPos = playerPos + playerDirection * (spawnDistance + (i/2));
+                    //    Collider2D collider = Physics2D.OverlapCircle(spawnPos, 0.1f);
+                    //    if (collider != null)
+                    //    {
+                    //        break;
+                    //    }
+                    //    GameObject newJam = Instantiate(Jam, spawnPos, Quaternion.identity);
+                    //}
+                    duration = PowerUp.duration;
+                    newJam = Instantiate(BulletJam, transform.position, transform.rotation);
+                    newJam.transform.localScale = new Vector3(PowerUp.scale, PowerUp.scale, PowerUp.scale);
                     usingPowerUs = true;
                     break;
             }
@@ -284,6 +297,7 @@ public class InventoryPowerUps : MonoBehaviour
 
                 case 5:
                     usingPowerUs = false;
+                    Destroy(newJam);
                     break;
             }
         }

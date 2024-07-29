@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c7a7da47244b1143a91fe5a1590a5d7, type: 3}
   m_Name: Jamshot
   m_EditorClassIdentifier: 
-  name: 
+  name: JamShot
   type: 5
   artwork: {fileID: 21300000, guid: 3d0352945fee9db4aae2e6bb11549f1a, type: 3}
-  duration: 1
-  scale: 5
+  duration: 5
+  scale: 0.3
   Clone:
   - {fileID: 0}
   instant: 2

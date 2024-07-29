@@ -193,7 +193,7 @@ MonoBehaviour:
   EfxObject: {fileID: 5934454259806065356}
   efxRigi: {fileID: 2264716560681878308}
   efxSprite: {fileID: 6484856644798568878}
-  checkJamShot: {fileID: 1529668273526352482}
+  checkJamShot: {fileID: 0}
   Jam: {fileID: 8425058719138339900, guid: fc044830e8331d149b46fafb0c6db848, type: 3}
   R: 255
   G: 255
@@ -339,7 +339,6 @@ GameObject:
   - component: {fileID: 2526010845088574910}
   - component: {fileID: 6484856644798568878}
   - component: {fileID: 2264716560681878308}
-  - component: {fileID: 1529668273526352482}
   m_Layer: 6
   m_Name: PowerUpEfx
   m_TagString: Untagged
@@ -462,51 +461,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!61 &1529668273526352482
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5934454259806065356}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 2}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2, y: 2}
-  m_EdgeRadius: 0
 --- !u!1 &5977635153233062079
 GameObject:
   m_ObjectHideFlags: 0

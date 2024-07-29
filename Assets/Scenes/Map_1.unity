@@ -1644,6 +1644,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 810775513}
+    - target: {fileID: 7561690179623664965, guid: 6e47df042abe86a4ea7a83b7c8b479ce, type: 3}
+      propertyPath: BulletJam
+      value: 
+      objectReference: {fileID: 5295337618659188879, guid: fd48acea04044b547a4de0cf1759bf80, type: 3}
     - target: {fileID: 7627676072681640341, guid: 6e47df042abe86a4ea7a83b7c8b479ce, type: 3}
       propertyPath: m_Constraints
       value: 4
@@ -1989,6 +1993,10 @@ PrefabInstance:
       propertyPath: Jam
       value: 
       objectReference: {fileID: 8425058719138339900, guid: fc044830e8331d149b46fafb0c6db848, type: 3}
+    - target: {fileID: 7394888016297024326, guid: c95d706a3983070418b1b43ff08d5256, type: 3}
+      propertyPath: BulletJam
+      value: 
+      objectReference: {fileID: 5295337618659188879, guid: 5fe958b4be8ff234ca76cb0fbee81b80, type: 3}
     - target: {fileID: 9012241518478347905, guid: c95d706a3983070418b1b43ff08d5256, type: 3}
       propertyPath: m_Layer
       value: 6
