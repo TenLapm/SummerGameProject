@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 90833144}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -273,7 +273,7 @@ GameObject:
   - component: {fileID: 113908484}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -571,7 +571,7 @@ GameObject:
   - component: {fileID: 635299921}
   m_Layer: 0
   m_Name: GamePlay03_Obstacle_0
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -845,8 +845,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6624088709044204694, guid: 89501e5fe2b13ee4b85f34bede2ac4bf, type: 3}
     - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
-      propertyPath: ratePowerUp.Array.data[2]
+      propertyPath: ratePowerUp.Array.data[0]
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
+      propertyPath: ratePowerUp.Array.data[2]
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3314273616676505158, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -924,7 +928,7 @@ GameObject:
   - component: {fileID: 1109053869}
   m_Layer: 0
   m_Name: GamePlay03_Playboard
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1072,7 +1076,7 @@ GameObject:
   - component: {fileID: 1122783077}
   m_Layer: 0
   m_Name: GamePlay03_Obstacle_2
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1315,7 +1319,7 @@ GameObject:
   - component: {fileID: 1296120431}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1474,7 +1478,7 @@ GameObject:
   - component: {fileID: 1395524507}
   m_Layer: 0
   m_Name: GamePlay03_Obstacle_1
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1559,7 +1563,7 @@ GameObject:
   - component: {fileID: 1467556111}
   m_Layer: 0
   m_Name: GamePlay03_Obstacle_3
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1730,8 +1734,12 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
-      propertyPath: ratePowerUp.Array.data[2]
+      propertyPath: ratePowerUp.Array.data[1]
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
+      propertyPath: ratePowerUp.Array.data[2]
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3314273616676505158, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1791,7 +1799,7 @@ GameObject:
   - component: {fileID: 1595541261}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1964,8 +1972,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9025755198874920527, guid: 41ea1ed4d90324748b21f61d40ad2f77, type: 3}
     - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
-      propertyPath: ratePowerUp.Array.data[2]
+      propertyPath: ratePowerUp.Array.data[0]
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112356556498825798, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
+      propertyPath: ratePowerUp.Array.data[2]
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3314273616676505158, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2025,7 +2037,7 @@ GameObject:
   - component: {fileID: 1636515030}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2270,7 +2282,7 @@ GameObject:
   - component: {fileID: 2006351498}
   m_Layer: 0
   m_Name: GamePlay03_Obstacle_4
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
