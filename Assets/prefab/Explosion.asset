@@ -16,7 +16,7 @@ MonoBehaviour:
   type: 2
   artwork: {fileID: 21300000, guid: 9ea5fe37b8cd69541851a16310485384, type: 3}
   duration: 0.2
-  scale: 4
+  scale: 6
   Clone:
   - {fileID: 0}
   instant: 2
