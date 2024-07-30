@@ -17,7 +17,6 @@ public class PowerUpUi : MonoBehaviour
     [Header("LifeTime")]
     [SerializeField] private float maxTimer;
 
-
     void Start()
     {
         type = (int)Powerup.type;

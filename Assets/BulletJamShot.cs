@@ -27,6 +27,8 @@ public class BulletJamShot : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         lastSpawnPosition = transform.position;
+
+        gridManager = FindObjectOfType<GridManager>();
     }
 
 

@@ -47,87 +47,96 @@ public class PlayerControl : MonoBehaviour
 
     [SerializeField] private float spawnDistance = 5.0f;
     private Vector3 lastSpawnPosition;
+
+    private InGameUI gameUI;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         gridManager = FindObjectOfType<GridManager>();
         lastSpawnPosition = transform.position;
         animator = GetComponent<Animator>();
+        gameUI = FindObjectOfType<InGameUI>();
     }
 
 
     void Update()
     {
-        
+        if (gameUI.countdownActive == false)
+        {
             if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S))
             {
                 isDeacceleration = true;
             }
             brushRadius = transform.localScale.x;
-        if (isExplosion) {
-            speed = maxSpeed;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            Quaternion rotationZ = Quaternion.LookRotation(Vector3.forward, direction);
-            transform.rotation = rotationZ;
-            spiningSpeed = (maxSpeed - minimumSpeedForBounce) / 0.5f;
-            isBouncing = true;
-            bounceTime = maxBounceTime;
-            isExplosion = false;
+            if (isExplosion)
+            {
+                speed = maxSpeed;
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                Quaternion rotationZ = Quaternion.LookRotation(Vector3.forward, direction);
+                transform.rotation = rotationZ;
+                spiningSpeed = (maxSpeed - minimumSpeedForBounce) / 0.5f;
+                isBouncing = true;
+                bounceTime = maxBounceTime;
+                isExplosion = false;
+            }
         }
     }
 
     void FixedUpdate()
     {
-        lastVelocity = rb.velocity;
-
-
-        if (!isBouncing)
+        if (gameUI.countdownActive == false)
         {
-            Control();
-            Moving();
-        }
+            lastVelocity = rb.velocity;
 
-        if (isBouncing)
-        {
-            animator.SetBool("IsBounce", true);
-            if (speed > 0.0f)
-                if (speed > 0.0f)
-                {
-                    speed -= slowSpeed;
-                }
-            bounceTime -= Time.deltaTime;
-            gameObject.transform.Rotate(0.0f, 0.0f, -spiningSpeed);
-            Moving();
 
-        }
-
-        if (bounceTime < 0.0f && isBouncing)
-        {
-            isBouncing = false;
-            isHittingWall = false;
-            animator.SetBool("IsBounce", false);
-        }
-
-        if (speed < 0.0f)
-        {
-            if (bounceTime < 0.0f)
+            if (!isBouncing)
             {
-                speed = 0.0f;
+                Control();
+                Moving();
+            }
+
+            if (isBouncing)
+            {
+                animator.SetBool("IsBounce", true);
+                if (speed > 0.0f)
+                    if (speed > 0.0f)
+                    {
+                        speed -= slowSpeed;
+                    }
+                bounceTime -= Time.deltaTime;
+                gameObject.transform.Rotate(0.0f, 0.0f, -spiningSpeed);
+                Moving();
+
+            }
+
+            if (bounceTime < 0.0f && isBouncing)
+            {
                 isBouncing = false;
+                isHittingWall = false;
                 animator.SetBool("IsBounce", false);
             }
-        }
-        if (gridManager != null)
-        {
-            Vector3 playerPosition = transform.position;
-            Vector2Int gridPosition = gridManager.WorldToGridPosition(transform.position);
-            gridManager.ChangeTileOwner(gridPosition, player, brushRadius);
-        }
 
-        if (Vector3.Distance(transform.position, lastSpawnPosition) >= spawnDistance)
-        {
-            SpawnSprite();
-            lastSpawnPosition = transform.position;
+            if (speed < 0.0f)
+            {
+                if (bounceTime < 0.0f)
+                {
+                    speed = 0.0f;
+                    isBouncing = false;
+                    animator.SetBool("IsBounce", false);
+                }
+            }
+            if (gridManager != null)
+            {
+                Vector3 playerPosition = transform.position;
+                Vector2Int gridPosition = gridManager.WorldToGridPosition(transform.position);
+                gridManager.ChangeTileOwner(gridPosition, player, brushRadius);
+            }
+
+            if (Vector3.Distance(transform.position, lastSpawnPosition) >= spawnDistance)
+            {
+                SpawnSprite();
+                lastSpawnPosition = transform.position;
+            }
         }
     }
 
@@ -307,6 +316,7 @@ public class PlayerControl : MonoBehaviour
                 spiningSpeed = (speed - minimumSpeedForBounce) / 0.5f;
                 isBouncing = true;
                 bounceTime = maxBounceTime;
+                SoundManager.PlaySound(SoundManager.Sound.Boop);
             }
         
         
@@ -353,7 +363,8 @@ public class PlayerControl : MonoBehaviour
         Vector3 spawnPoint = GetRandomSpawnPoint();
         SpriteRenderer spriteRenderer = selectedPrefab.GetComponent<SpriteRenderer>();
         spriteRenderer.sortingOrder = Mathf.RoundToInt(Time.time * 100);
-        Instantiate(selectedPrefab, spawnPoint, Quaternion.identity);
+        GameObject spawnedObject = Instantiate(selectedPrefab, spawnPoint, Quaternion.identity);
+        spawnedObject.transform.localScale = transform.localScale; 
     }
 
     private GameObject GetRandomSpritePrefab()

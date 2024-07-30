@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7221253878266026546}
   - component: {fileID: 4400272198298302401}
+  - component: {fileID: -7549829797096430562}
   m_Layer: 0
   m_Name: Player2_Trail02
-  m_TagString: Untagged
+  m_TagString: Trail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1554793283
   m_SortingLayer: 2
-  m_SortingOrder: 1966
+  m_SortingOrder: 1740
   m_Sprite: {fileID: 21300000, guid: 20b6ae51d2c22d0489b2722560fbcc32, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -84,3 +85,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-7549829797096430562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494037007738241952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e70a4ebac24aff4a8be5920bb41f476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -19,12 +19,15 @@ public class UIController : MonoBehaviour
     private Dictionary<GameObject, GameObject> mapButtonToBackgroundMap;
     private GameObject selectedMapButton;
 
+    private bool settingOn = false;
+
     private void Start()
     {
         SettingPanel.SetActive(false);
         Map1BG.SetActive(true);
         Map2BG.SetActive(false);
         Map3BG.SetActive(false);
+        settingOn = false;
 
         mapButtonToBackgroundMap = new Dictionary<GameObject, GameObject>
         {
@@ -94,12 +97,24 @@ public class UIController : MonoBehaviour
 
     public void SettingOn()
     {
-        SettingPanel.SetActive(true);
+        settingOn = false;
+        if (settingOn == false)
+        {
+            SettingPanel.SetActive(true);
+            settingOn = true;
+        }
     }
 
     public void SettingOff()
     {
-        SettingPanel.SetActive(false);
+        settingOn = true;
+        if(settingOn)
+        {
+            SettingPanel.SetActive(false);
+            settingOn = false;
+        }
+        
+        
     }
 
     public void Select(GameObject selectedButton)

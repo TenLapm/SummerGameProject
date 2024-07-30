@@ -39,16 +39,25 @@ public class InventoryPowerUps : MonoBehaviour
     [SerializeField] int R = 255;
     [SerializeField] int G = 255;
     [SerializeField] int B = 255;
+
+    private GridManager gridManager;
+    private InGameUI gameUI;
     void Start()
     {
         playerControl = GetComponent<PlayerControl>();
+        gridManager = FindObjectOfType<GridManager>();
+        gameUI = FindObjectOfType<InGameUI>();
     }
 
     void Update()
     {
-        UsingPowerUps();
-        PowerUpsDuration();
-        anim();
+        if (gameUI.countdownActive == false)
+        {
+            UsingPowerUps();
+            PowerUpsDuration();
+            anim();
+        }
+            
     }
 
     private void OnTriggerEnter2D(Collider2D other)

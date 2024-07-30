@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-//using UnityEditor.Animations;
 
 public class InGameUI : MonoBehaviour
 {
@@ -20,7 +19,12 @@ public class InGameUI : MonoBehaviour
 
     private bool donefade;
 
+    [SerializeField] private TMP_Text countdownText;
+    [SerializeField] private GameObject countdownPanel;
+    
+    [HideInInspector] public bool countdownActive = false;
 
+    private AudioSource bgmAudioSource;
     void Start()
     {
 
@@ -28,6 +32,12 @@ public class InGameUI : MonoBehaviour
         timer = GetComponent<Timer>();
         gameManager = FindObjectOfType<GameManager>();
         donefade = false;
+
+        if (!countdownActive)
+        {
+            StartCoroutine(StartCountdown());
+        }
+        
     }
 
     void Update()
@@ -97,23 +107,35 @@ public class InGameUI : MonoBehaviour
 
     public void GameEnd()
     {
-        StartCoroutine(Transitioning(1));
-        if (donefade) {
-            
-            PauseMenu.SetActive(false);
-            Interface.SetActive(false);
-            Time.timeScale = 1.0f;
-            SoundManager.PlaySound(SoundManager.Sound.WinBGM);
-            if (gameManager.playerAWin)
+
+        StopBGM();
+        if (!countdownActive)
+        {
+            StartCoroutine(Transitioning(1));
+            if (donefade)
             {
-                PlayerAWin.SetActive(true);
-            }
-            else if (gameManager.playerBWin)
-            {
-                PlayerBWin.SetActive(true);
+                PauseMenu.SetActive(false);
+                Interface.SetActive(false);
+                Time.timeScale = 1.0f;
+                SoundManager.PlaySound(SoundManager.Sound.WinBGM);
+                if (gameManager.playerAWin)
+                {
+                    PlayerAWin.SetActive(true);
+                }
+                else if (gameManager.playerBWin)
+                {
+                    PlayerBWin.SetActive(true);
+                }
             }
         }
-        
+    }
+    private void StopBGM()
+    {
+        if (bgmAudioSource != null)
+        {
+            bgmAudioSource.Stop();
+            Destroy(bgmAudioSource.gameObject);
+        }
     }
 
     private IEnumerator Transitioning(int duration)
@@ -121,5 +143,35 @@ public class InGameUI : MonoBehaviour
         
         yield return new WaitForSeconds(duration);
         donefade = true;
+    }
+
+    private IEnumerator StartCountdown()
+    {
+        countdownActive = true;
+        countdownPanel.SetActive(true);
+        
+        SoundManager.PlaySound (SoundManager.Sound.TimeStart);
+        for (int i = 3; i > 0; i--)
+        {
+            countdownText.text = i.ToString();
+            yield return new WaitForSeconds(1f);
+        }
+        countdownText.text = "Go!";
+        yield return new WaitForSeconds(1f);
+        countdownPanel.SetActive(false);
+        countdownText.text = "";
+        countdownActive = false;
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            bgmAudioSource = SoundManager.PlaySound(SoundManager.Sound.BGM1);
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            bgmAudioSource = SoundManager.PlaySound(SoundManager.Sound.BGM2);
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 4)
+        {
+            bgmAudioSource = SoundManager.PlaySound(SoundManager.Sound.BGM3);
+        }
     }
 }

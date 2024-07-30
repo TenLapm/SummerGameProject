@@ -8,12 +8,22 @@ public class Timer : MonoBehaviour
     [SerializeField] private float setTime = 60;
     public float CurrentTime => setTime;
 
+    private InGameUI gameUI;
+
+    private void Awake()
+    {
+        gameUI = FindObjectOfType<InGameUI>();
+    }
     private void Update()
     {
-        if (Time.timeScale == 1.0f)
+        if(gameUI.countdownActive == false)
         {
-            setTime -= Time.deltaTime;
+            if (Time.timeScale == 1.0f)
+            {
+                setTime -= Time.deltaTime;
+            }
         }
+        
     }
 
     public void ResetTimer()

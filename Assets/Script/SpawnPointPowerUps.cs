@@ -15,10 +15,11 @@ public class SpawnPointPowerUps : MonoBehaviour
     [SerializeField] private int limit = 5;
     [SerializeField] private float maxTimer = 5;
     [SerializeField] private float radius = 0.5f;
-
+    private InGameUI gameUI;
 
     void Start()
     {
+        gameUI = FindObjectOfType<InGameUI>();
         for (int i = 0; i < ratePowerUp.Count; i++) { 
             num += ratePowerUp[i];
         }
@@ -27,14 +28,19 @@ public class SpawnPointPowerUps : MonoBehaviour
     
     void Update()
     {
-        if (count >= limit)
+        if (gameUI.countdownActive == false)
         {
-            isMax = true;
-        }
-        if (!isMax)
-        {
-            SpawnPowerUp();
-            Timer -= Time.deltaTime;
+
+
+            if (count >= limit)
+            {
+                isMax = true;
+            }
+            if (!isMax)
+            {
+                SpawnPowerUp();
+                Timer -= Time.deltaTime;
+            }
         }
         
     }

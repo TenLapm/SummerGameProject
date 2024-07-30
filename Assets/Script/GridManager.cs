@@ -11,8 +11,8 @@ public class GridManager : MonoBehaviour
     public GameObject tilePrefab;
     public TextMeshProUGUI playerAText;
     public TextMeshProUGUI playerBText;
-    public Image playerAScoreBar; // Reference to the first score bar
-    public Image playerBScoreBar; // Reference to the second score bar
+    public Image playerAScoreBar;
+    public Image playerBScoreBar;
 
     private GameObject[,] gridArray;
     private List<GameObject> tilePool = new List<GameObject>();
@@ -23,6 +23,9 @@ public class GridManager : MonoBehaviour
 
     [HideInInspector] public float PlayerAPercent => playerAPercent;
     [HideInInspector] public float PlayerBPercent => playerBPercent;
+
+    private const int PLAYER_A_LAYER = 6;
+    private const int PLAYER_B_LAYER = 7;
 
     void Start()
     {
@@ -90,6 +93,7 @@ public class GridManager : MonoBehaviour
                     if ((tileCenter - gridArray[gridPosition.y, gridPosition.x].transform.position).sqrMagnitude <= radius * radius)
                     {
                         gridOwners[checkPos.y, checkPos.x] = player;
+                        gridArray[checkPos.y, checkPos.x].layer = (player == Player.PlayerA) ? PLAYER_A_LAYER : PLAYER_B_LAYER;
                     }
                 }
             }
@@ -128,8 +132,8 @@ public class GridManager : MonoBehaviour
         playerBPercent = (float)playerBCount / totalGrids * 100;
         float defaultPercent = (float)defaultCount / totalGrids * 100;
 
-        playerAPercent = Mathf.Clamp01((playerAPercent + (defaultPercent / 2)) / 100f );
-        playerBPercent = Mathf.Clamp01((playerBPercent + (defaultPercent / 2)) / 100f );
+        playerAPercent = Mathf.Clamp01((playerAPercent + (defaultPercent / 2)) / 100f);
+        playerBPercent = Mathf.Clamp01((playerBPercent + (defaultPercent / 2)) / 100f);
 
         playerAText.text = $"Player A: {playerAPercent * 100:F2}%";
         playerBText.text = $"Player B: {playerBPercent * 100:F2}%";
@@ -159,5 +163,4 @@ public class GridManager : MonoBehaviour
 
         return new Vector2Int(x, y);
     }
-
 }

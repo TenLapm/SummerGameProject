@@ -47,6 +47,8 @@ public class CloneMovement : MonoBehaviour
         maxBounceTime = playerControl.maxBounceTime;
         circleCollider = GetComponent<CircleCollider2D>();
         lastSpawnPosition = transform.position;
+
+        gridManager = FindObjectOfType<GridManager>();
     }
 
 
