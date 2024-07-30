@@ -14,7 +14,7 @@ public class InventoryPowerUps : MonoBehaviour
     public bool HavePowerUp = false;
     public bool usingPowerUs = false;
     [SerializeField] private CircleCollider2D Explosion;
-    [SerializeField] private Animator animator;
+    public Animator animator;
     [SerializeField] private GameObject EfxObject;
     [SerializeField] private Rigidbody2D efxRigi;
     [SerializeField] private SpriteRenderer efxSprite;
@@ -125,18 +125,19 @@ public class InventoryPowerUps : MonoBehaviour
                     break;
                     
                 case 4:
-                    efxSprite.color = Color.white;
-                    efxRigi.constraints = RigidbodyConstraints2D.FreezeAll;
-                    EfxObject.transform.SetParent(null);
-                    nowPos = transform.position;
-                    EfxObject.transform.position = nowPos;
-                    animator.SetBool("IsJamExplosion", true);
-                    SoundManager.PlaySound(SoundManager.Sound.Blast);
-                    Vector2Int gridPosition = gridManager.WorldToGridPosition(transform.position);
-                    gridManager.ChangeTileOwner(gridPosition, playerControl.player, 3);
-                    once = false;
-                    usingPowerUs = true;
-                    animTime = 0.25f;
+                    if (usingPowerUs == false)
+                    {
+                        efxSprite.color = Color.white;
+                        efxRigi.constraints = RigidbodyConstraints2D.FreezeAll;
+                        EfxObject.transform.SetParent(null);
+                        nowPos = transform.position;
+                        EfxObject.transform.position = nowPos;
+                        animator.SetBool("IsJamExplosion", true);
+                        once = false;
+                        usingPowerUs = true;
+                        animTime = 0.25f;
+                    }
+                    
                     break;
             }
         }

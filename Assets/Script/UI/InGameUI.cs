@@ -94,9 +94,13 @@ public class InGameUI : MonoBehaviour
 
     public void Pause()
     {
-        Time.timeScale = 0.0f;
-        PauseMenu.SetActive(true);
-        paused = true;
+        if(countdownActive == false)
+        {
+            Time.timeScale = 0.0f;
+            PauseMenu.SetActive(true);
+            paused = true;
+        }
+        
     }
 
     public void Resume()
