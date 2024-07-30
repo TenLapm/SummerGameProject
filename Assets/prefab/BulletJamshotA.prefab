@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24243df28d0333418d8affc0009a379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 3
+  maxSpeed: 4
   player: 0
   trailSpawnPoint1: {fileID: 7251420150292611224}
   trailSpawnPoint2: {fileID: 3173831239036906091}
