@@ -2015,6 +2015,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2499156554774641550, guid: c95d706a3983070418b1b43ff08d5256, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2499156554774641550, guid: c95d706a3983070418b1b43ff08d5256, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484856644798568878, guid: c95d706a3983070418b1b43ff08d5256, type: 3}
+      propertyPath: m_Size.y
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6484856644798568878, guid: c95d706a3983070418b1b43ff08d5256, type: 3}
       propertyPath: m_SortingLayer
       value: 4
