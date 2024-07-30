@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-
+using UnityEngine.UI;
 public class InGameUI : MonoBehaviour
 {
     [SerializeField] private GameObject PauseMenu;
-    [SerializeField] private GameObject Interface;
     
     [SerializeField] private TMP_Text timerText;
     private Timer timer;
@@ -30,11 +29,22 @@ public class InGameUI : MonoBehaviour
     private bool is57= false;
     void Start()
     {
-
-        Interface.SetActive(true);
+        Button[] buttons = Object.FindObjectsOfType<Button>();
+        foreach (Button button in buttons)
+        {
+            if (button.gameObject.GetComponent<ButtonHoverSound>() == null)
+            {
+                button.gameObject.AddComponent<ButtonHoverSound>();
+            }
+        }
+        SoundManager.PlaySound(SoundManager.Sound.TimeStart);
+        PauseMenu.SetActive(false);
+        on57.SetActive(false);
         timer = GetComponent<Timer>();
         gameManager = FindObjectOfType<GameManager>();
         donefade = false;
+        PlayerAWin.SetActive(false);
+        PlayerBWin.SetActive(false);
 
         if (!countdownActive)
         {
@@ -45,6 +55,10 @@ public class InGameUI : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            SoundManager.PlaySound(SoundManager.Sound.Click);
+        }
         if (Input.GetKeyDown(KeyCode.Escape) && !paused)
         {
             Pause();
@@ -82,7 +96,6 @@ public class InGameUI : MonoBehaviour
     {
         Time.timeScale = 0.0f;
         PauseMenu.SetActive(true);
-        Interface.SetActive(false);
         paused = true;
     }
 
@@ -90,7 +103,6 @@ public class InGameUI : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         PauseMenu.SetActive(false);
-        Interface.SetActive(true);
         paused = false;
     }
 
@@ -122,7 +134,6 @@ public class InGameUI : MonoBehaviour
             if (donefade)
             {
                 PauseMenu.SetActive(false);
-                Interface.SetActive(false);
                 Time.timeScale = 1.0f;
                 SoundManager.PlaySound(SoundManager.Sound.WinBGM);
                 if (gameManager.playerAWin)
@@ -157,7 +168,7 @@ public class InGameUI : MonoBehaviour
         countdownActive = true;
         countdownPanel.SetActive(true);
         
-        SoundManager.PlaySound (SoundManager.Sound.TimeStart);
+
         for (int i = 3; i > 0; i--)
         {
             countdownText.text = i.ToString();

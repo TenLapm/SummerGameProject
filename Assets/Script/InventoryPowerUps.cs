@@ -34,6 +34,7 @@ public class InventoryPowerUps : MonoBehaviour
     private bool once = true;
     private float animTime = 0.3f;
     private Vector3 nowPos;
+    private Player player;
 
     [Header("Color Effect Clone")]
     [SerializeField] int R = 255;
@@ -110,14 +111,16 @@ public class InventoryPowerUps : MonoBehaviour
                     usingPowerUs = true;
                     break;
                 case 3:
-
+                    
                     for (int i = 0; i < PowerUp.scale; i++)
                     {
+                        
                         float axisz = (360.0f / (PowerUp.scale + 1));
                         GameObject c = Instantiate(Gclone, transform.position, Quaternion.Euler(new Vector3(0, 0, (axisz * (i + 1)) + transform.rotation.eulerAngles.z)));
                         duration = PowerUp.duration;
                         Clone.Add(c);
                     }
+                    
                     usingPowerUs = true;
                     break;
                     
@@ -128,6 +131,9 @@ public class InventoryPowerUps : MonoBehaviour
                     nowPos = transform.position;
                     EfxObject.transform.position = nowPos;
                     animator.SetBool("IsJamExplosion", true);
+                    SoundManager.PlaySound(SoundManager.Sound.Blast);
+                    Vector2Int gridPosition = gridManager.WorldToGridPosition(transform.position);
+                    gridManager.ChangeTileOwner(gridPosition, playerControl.player, 3);
                     once = false;
                     usingPowerUs = true;
                     animTime = 0.25f;
@@ -160,6 +166,7 @@ public class InventoryPowerUps : MonoBehaviour
                     usingPowerUs = true;
                     Explosion.radius = PowerUp.scale;
                     animator.SetBool("IsExplosion", true);
+                    SoundManager.PlaySound(SoundManager.Sound.Blast2);
                     break;
                 case 3:
                     efxSprite.color = new Color(R, G, B);
@@ -228,6 +235,7 @@ public class InventoryPowerUps : MonoBehaviour
                     usingPowerUs = true;
                     Explosion.radius = PowerUp.scale;
                     animator.SetBool("IsExplosion", true);
+                    SoundManager.PlaySound(SoundManager.Sound.Blast2);
                     break;
                 case 3:
                     efxSprite.color = new Color(R, G, B);
@@ -246,6 +254,7 @@ public class InventoryPowerUps : MonoBehaviour
                         Clone.Add(c);
                     }
                     usingPowerUs = true;
+
                     break;
                 case 5:
                     //Vector3 playerPos = transform.position;
@@ -299,8 +308,10 @@ public class InventoryPowerUps : MonoBehaviour
                     usingPowerUs = false;
                     for (int i = 0; i < PowerUp.scale; i++)
                     {
+                       
                         Destroy(Clone[i]);
                     }
+                    SoundManager.PlaySound(SoundManager.Sound.Cloneoff);
                     animator.SetBool("IsExplosion", false);
                     Clone.Clear();
                     break;
@@ -349,8 +360,8 @@ public class InventoryPowerUps : MonoBehaviour
         Vector2 spawnPos = playerPos + playerDirection * (spawnDistance * 3);
         Gizmos.DrawLine(transform.position, spawnPos);
     }
-    IEnumerator wait()
+    IEnumerator wait(int num)
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(num);
     }
 }

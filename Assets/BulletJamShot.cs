@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Claims;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -23,10 +24,13 @@ public class BulletJamShot : MonoBehaviour
 
     [SerializeField] private float spawnDistance = 1.0f;
     private Vector3 lastSpawnPosition;
+    private Animator animator;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         lastSpawnPosition = transform.position;
+        animator = GetComponent<Animator>();
+
 
         gridManager = FindObjectOfType<GridManager>();
     }
@@ -64,16 +68,19 @@ public class BulletJamShot : MonoBehaviour
         if (collision.tag == "Wall")
         {
             inventoryPowerUp.usingPowerUs = false;
-            Destroy(gameObject);
+            StartCoroutine(playExplode());
         }
         if(collision.tag == "Player")
         {
+            
             if (player != Player.PlayerA)
             {
                 if (collision.gameObject.layer == 6)
                 {
+                    
                     inventoryPowerUp.usingPowerUs = false;
-                    Destroy(gameObject);
+                    StartCoroutine(playExplode());
+
                 }
                 else if(collision.gameObject.layer == 7) 
                 {
@@ -85,7 +92,7 @@ public class BulletJamShot : MonoBehaviour
                 if (collision.gameObject.layer == 7)
                 {
                     inventoryPowerUp.usingPowerUs = false;
-                    Destroy(gameObject);
+                    StartCoroutine(playExplode());
                 }
 
                 else if (collision.gameObject.layer == 6)
@@ -149,5 +156,22 @@ public class BulletJamShot : MonoBehaviour
         int row = Mathf.FloorToInt(localPos.y / gridManager.tileSize);
 
         return new Vector2Int(col, row);
+    }
+
+    private IEnumerator playExplode()
+    {
+        animator.SetTrigger("Hit");
+        maxSpeed = 0;
+        yield return new WaitForSeconds(0.45f);
+        GameObject selectedPrefab = GetRandomSpritePrefab();
+        Vector3 spawnPoint = GetRandomSpawnPoint();
+        GameObject instance = Instantiate(selectedPrefab, spawnPoint, Quaternion.identity);
+        SpriteRenderer spriteRenderer = instance.GetComponent<SpriteRenderer>();
+        spriteRenderer.sortingOrder = Mathf.RoundToInt(Time.time * 100);
+        instance.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        Vector2Int gridPosition = gridManager.WorldToGridPosition(transform.position);
+        gridManager.ChangeTileOwner(gridPosition, player, 1);
+        SoundManager.PlaySound(SoundManager.Sound.JamSplat);
+        Destroy(gameObject);
     }
 }

@@ -23,6 +23,20 @@ public class UIController : MonoBehaviour
 
     private void Start()
     {
+        GameObject[] allGameObjects = FindObjectsOfType<GameObject>(true); 
+        foreach (GameObject go in allGameObjects)
+        {
+            go.SetActive(true);
+        }
+        Button[] buttons = Object.FindObjectsOfType<Button>();
+
+        foreach (Button button in buttons)
+        {
+            if (button.gameObject.GetComponent<ButtonHoverSound>() == null)
+            {
+                button.gameObject.AddComponent<ButtonHoverSound>();
+            }
+        }
         SettingPanel.SetActive(false);
         Map1BG.SetActive(true);
         Map2BG.SetActive(false);
@@ -35,6 +49,7 @@ public class UIController : MonoBehaviour
             { Map2Button, Map2BG },
             { Map3Button, Map3BG }
         };
+        
 
         Map1Button.GetComponent<Button>().onClick.AddListener(() => Select(Map1Button));
         Map2Button.GetComponent<Button>().onClick.AddListener(() => Select(Map2Button));
@@ -162,5 +177,13 @@ public class UIController : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            SoundManager.PlaySound(SoundManager.Sound.Click);
+        }
     }
 }

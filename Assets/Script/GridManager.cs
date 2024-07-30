@@ -9,8 +9,6 @@ public class GridManager : MonoBehaviour
     public int cols = 10;
     public float tileSize = 1.0f;
     public GameObject tilePrefab;
-    public TextMeshProUGUI playerAText;
-    public TextMeshProUGUI playerBText;
     public Image playerAScoreBar;
     public Image playerBScoreBar;
 
@@ -135,8 +133,6 @@ public class GridManager : MonoBehaviour
         playerAPercent = Mathf.Clamp01((playerAPercent + (defaultPercent / 2)) / 100f);
         playerBPercent = Mathf.Clamp01((playerBPercent + (defaultPercent / 2)) / 100f);
 
-        playerAText.text = $"Player A: {playerAPercent * 100:F2}%";
-        playerBText.text = $"Player B: {playerBPercent * 100:F2}%";
 
         if (playerAScoreBar != null)
         {

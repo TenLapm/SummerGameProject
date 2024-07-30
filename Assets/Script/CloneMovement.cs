@@ -40,6 +40,7 @@ public class CloneMovement : MonoBehaviour
     private Vector3 lastSpawnPosition;
     void Start()
     {
+        SoundManager.PlaySound(SoundManager.Sound.CloneOn);
         rb = GetComponent<Rigidbody2D>();
         playerControl = playerObject.GetComponent<PlayerControl>();
         speed = playerControl.maxSpeed;

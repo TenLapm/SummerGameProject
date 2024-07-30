@@ -84,3 +84,24 @@ MonoBehaviour:
   - sound: 16
     audioClip: {fileID: 8300000, guid: 91fef93f68545d343a9f8f1ee7efd75d, type: 3}
     soundType: 1
+  - sound: 17
+    audioClip: {fileID: 8300000, guid: 3dfe5c4e53b27bd40b503621a1685810, type: 3}
+    soundType: 1
+  - sound: 18
+    audioClip: {fileID: 8300000, guid: e2e80a438fbac7c469c19abaabd312f7, type: 3}
+    soundType: 1
+  - sound: 3
+    audioClip: {fileID: 8300000, guid: cda29fabff4e00c4e87e24f4fc7da811, type: 3}
+    soundType: 1
+  - sound: 4
+    audioClip: {fileID: 8300000, guid: 65bf9062f07e35743999a220530b0232, type: 3}
+    soundType: 1
+  - sound: 5
+    audioClip: {fileID: 8300000, guid: 4917d9279fa72cd44879568bd650861e, type: 3}
+    soundType: 1
+  - sound: 19
+    audioClip: {fileID: 8300000, guid: 3805f3d7227727e4fa79ee51fd4f32c4, type: 3}
+    soundType: 1
+  - sound: 20
+    audioClip: {fileID: 8300000, guid: 7f1c6fa2f33505140babd0a0b1b54efc, type: 3}
+    soundType: 1

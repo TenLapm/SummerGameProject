@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &640426684372199461
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1283001379038482757}
+  - component: {fileID: 8185296433804043051}
+  m_Layer: 6
+  m_Name: ExpandSFXA
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1283001379038482757
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640426684372199461}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1971732465065807255}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8185296433804043051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640426684372199461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1570d29497a04d34f98a6d4660f0a061, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1043560398966371887
 GameObject:
   m_ObjectHideFlags: 0
@@ -71,6 +115,7 @@ Transform:
   - {fileID: 6809908269558845988}
   - {fileID: 2081797215446383053}
   - {fileID: 2499156554774641550}
+  - {fileID: 1283001379038482757}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8938971928667718163
@@ -162,8 +207,8 @@ MonoBehaviour:
   minimumSpeed: 0
   upSpeed: 0.2
   slowSpeed: 0.15
-  turning: 0.5
-  minimumSpeedForBounce: 5
+  turning: 2.5
+  minimumSpeedForBounce: 6
   maxBounceTime: 0.2
   player: 0
   trailSpawnPoint1: {fileID: 9012241518478347905}
@@ -195,10 +240,11 @@ MonoBehaviour:
   efxSprite: {fileID: 6484856644798568878}
   checkJamShot: {fileID: 0}
   Jam: {fileID: 8425058719138339900, guid: fc044830e8331d149b46fafb0c6db848, type: 3}
-  BulletJam: {fileID: 0}
-  R: 255
-  G: 255
-  B: 255
+  BulletJam: {fileID: 5295337618659188879, guid: 5fe958b4be8ff234ca76cb0fbee81b80, type: 3}
+  R: 0
+  G: 0
+  B: 0
+  expandSFX: {fileID: 640426684372199461}
 --- !u!58 &4494416264631432049
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -233,7 +279,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.0099998
+  m_Radius: 1.2
 --- !u!50 &5315908783752624247
 Rigidbody2D:
   serializedVersion: 4
@@ -260,7 +306,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &4740917676696853265
 GameObject:
   m_ObjectHideFlags: 0

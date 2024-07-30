@@ -23,7 +23,9 @@ public static class SoundManager
         PlayerMove,
         PickUp,
         CloneOn,
-        Cloneoff
+        Cloneoff,
+        Hover,
+        JamSplat
     }
 
     private static Dictionary<Sound, float> soundTimerDictionary;
