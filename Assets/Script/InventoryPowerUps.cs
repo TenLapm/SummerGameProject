@@ -166,7 +166,7 @@ public class InventoryPowerUps : MonoBehaviour
                     Explosion.enabled = true;
                     usingPowerUs = true;
                     Explosion.radius = PowerUp.scale;
-                    animator.SetBool("IsExplosion", true);
+                    animator.SetTrigger("IsExplosion");
                     SoundManager.PlaySound(SoundManager.Sound.Blast2);
                     break;
                 case 3:
@@ -177,7 +177,7 @@ public class InventoryPowerUps : MonoBehaviour
                     EfxObject.transform.SetParent(transform, true);
                     EfxObject.transform.position = transform.position;
                     EfxObject.transform.rotation = transform.rotation;
-                    animator.SetBool("IsExplosion", true);
+                    animator.SetTrigger("IsExplosion");
                     for (int i = 0; i < PowerUp.scale; i++)
                     {
                         float axisz = (360.0f / (PowerUp.scale + 1));
@@ -235,7 +235,7 @@ public class InventoryPowerUps : MonoBehaviour
                     Explosion.enabled = true;
                     usingPowerUs = true;
                     Explosion.radius = PowerUp.scale;
-                    animator.SetBool("IsExplosion", true);
+                    animator.SetTrigger("IsExplosion");
                     SoundManager.PlaySound(SoundManager.Sound.Blast2);
                     break;
                 case 3:
@@ -246,7 +246,7 @@ public class InventoryPowerUps : MonoBehaviour
                     EfxObject.transform.SetParent(transform, true);
                     EfxObject.transform.position = transform.position;
                     EfxObject.transform.rotation = transform.rotation;
-                    animator.SetBool("IsExplosion", true);
+                    animator.SetTrigger("IsExplosion");
                     for (int i = 0; i < PowerUp.scale; i++)
                     {
                         float axisz = (360.0f / (PowerUp.scale + 1));
@@ -303,7 +303,6 @@ public class InventoryPowerUps : MonoBehaviour
                 case 2:
                     Explosion.enabled = false;
                     usingPowerUs = false;
-                    animator.SetBool("IsExplosion", false);
                     break;
                 case 3:
                     usingPowerUs = false;
@@ -313,7 +312,6 @@ public class InventoryPowerUps : MonoBehaviour
                         Destroy(Clone[i]);
                     }
                     SoundManager.PlaySound(SoundManager.Sound.Cloneoff);
-                    animator.SetBool("IsExplosion", false);
                     Clone.Clear();
                     break;
 
@@ -340,7 +338,6 @@ public class InventoryPowerUps : MonoBehaviour
 
         if(animTime <= 0)
         {
-            animator.SetBool("IsExplosion", false);
             animator.SetBool("IsJamExplosion", false);
             if (!once)
             {
