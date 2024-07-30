@@ -21,15 +21,20 @@ public static class SoundManager
         TimeEnd,
         WinBGM,
         PlayerMove,
+        PickUp,
+        CloneOn,
+        Cloneoff
     }
 
     private static Dictionary<Sound, float> soundTimerDictionary;
     private static GameObject winBGMGameObject;
+    private static HashSet<Sound> playedOneTimeSounds; // To track sounds that have been played once
 
     public static void Initialize()
     {
         soundTimerDictionary = new Dictionary<Sound, float>();
         soundTimerDictionary[Sound.PlayerMove] = 0f;
+        playedOneTimeSounds = new HashSet<Sound>(); // Initialize the set
     }
 
     public static AudioSource PlaySound(Sound sound)
@@ -71,6 +76,7 @@ public static class SoundManager
         }
         return null;
     }
+
 
     private static bool CanPlaySound(Sound sound)
     {

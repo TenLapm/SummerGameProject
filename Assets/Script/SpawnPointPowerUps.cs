@@ -84,4 +84,5 @@ public class SpawnPointPowerUps : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(transform.position, new Vector2(axisX, axisY));
     }
+
 }

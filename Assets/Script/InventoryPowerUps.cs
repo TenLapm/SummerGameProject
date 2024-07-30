@@ -42,6 +42,8 @@ public class InventoryPowerUps : MonoBehaviour
 
     private GridManager gridManager;
     private InGameUI gameUI;
+
+    [SerializeField] private GameObject expandSFX;
     void Start()
     {
         playerControl = GetComponent<PlayerControl>();
@@ -65,6 +67,7 @@ public class InventoryPowerUps : MonoBehaviour
         if (other.tag == "PowerUp" && !HavePowerUp && !usingPowerUs)
         {
             Debug.Log("Pickup");
+            SoundManager.PlaySound(SoundManager.Sound.PickUp);
             HavePowerUp = true;
             PowerUp = other.GetComponent<PowerUpUi>().Powerup;
             spawnPointPowerUps = other.GetComponent<PowerUpUi>().count;
@@ -101,6 +104,7 @@ public class InventoryPowerUps : MonoBehaviour
                     scale = transform.localScale;
                     transform.localScale = new Vector3(PowerUp.scale, PowerUp.scale, PowerUp.scale);
                     usingPowerUs = true;
+                    expandSFX.SetActive(true);
                     break;
                 case 2:
                     usingPowerUs = true;
@@ -194,6 +198,7 @@ public class InventoryPowerUps : MonoBehaviour
                     newJam = Instantiate(BulletJam, transform.position, transform.rotation);
                     newJam.transform.localScale = new Vector3(PowerUp.scale, PowerUp.scale, PowerUp.scale);
                     usingPowerUs = true;
+                    SoundManager.PlaySound(SoundManager.Sound.Puke);
                     break;
             }
         }
@@ -261,6 +266,7 @@ public class InventoryPowerUps : MonoBehaviour
                     newJam = Instantiate(BulletJam, transform.position, transform.rotation);
                     newJam.transform.localScale = new Vector3(PowerUp.scale, PowerUp.scale, PowerUp.scale);
                     usingPowerUs = true;
+                    SoundManager.PlaySound(SoundManager.Sound.Puke);
                     break;
             }
         }
@@ -282,6 +288,7 @@ public class InventoryPowerUps : MonoBehaviour
                     instant = 0;
                     transform.localScale = scale;
                     usingPowerUs = false;
+                    expandSFX.SetActive(false);
                     break;
                 case 2:
                     Explosion.enabled = false;
@@ -341,5 +348,9 @@ public class InventoryPowerUps : MonoBehaviour
         float spawnDistance = 1f;
         Vector2 spawnPos = playerPos + playerDirection * (spawnDistance * 3);
         Gizmos.DrawLine(transform.position, spawnPos);
+    }
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(1);
     }
 }

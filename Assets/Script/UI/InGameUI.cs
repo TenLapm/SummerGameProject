@@ -25,6 +25,9 @@ public class InGameUI : MonoBehaviour
     [HideInInspector] public bool countdownActive = false;
 
     private AudioSource bgmAudioSource;
+
+    [SerializeField] private GameObject on57;
+    private bool is57= false;
     void Start()
     {
 
@@ -68,6 +71,10 @@ public class InGameUI : MonoBehaviour
         if (gameManager.GameEnded)
         {
             GameEnd();
+        }
+        if(timer.CurrentTime < 11)
+        {
+            on57.SetActive(true);
         }
     }
 

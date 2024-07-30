@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public enum powerUpType
 {
     Default, UpSize, Explosion, Clone, JamBomb, JamShot
 }
-
 
 public enum Instant
 {
