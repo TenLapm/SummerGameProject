@@ -19,8 +19,8 @@ public class InventoryPowerUps : MonoBehaviour
     [SerializeField] private Rigidbody2D efxRigi;
     [SerializeField] private SpriteRenderer efxSprite;
     [SerializeField] private BoxCollider2D checkJamShot;
-    private int type;
-    private PowerUps PowerUp;
+    public int type;
+    public PowerUps PowerUp;
     private float duration;
     private Vector3 scale;
     private SpawnPointPowerUps spawnPointPowerUps;
@@ -72,6 +72,7 @@ public class InventoryPowerUps : MonoBehaviour
             HavePowerUp = true;
             PowerUp = other.GetComponent<PowerUpUi>().Powerup;
             spawnPointPowerUps = other.GetComponent<PowerUpUi>().count;
+            type = (int)PowerUp.type;
             if (PowerUp.type == powerUpType.Clone) 
             {
                 if (playerControl.player == Player.PlayerA)
