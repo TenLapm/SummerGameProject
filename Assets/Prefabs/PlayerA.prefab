@@ -283,11 +283,13 @@ MonoBehaviour:
   efxRigi: {fileID: 2264716560681878308}
   efxSprite: {fileID: 6484856644798568878}
   checkJamShot: {fileID: 0}
+  type: 0
+  PowerUp: {fileID: 0}
   Jam: {fileID: 8425058719138339900, guid: fc044830e8331d149b46fafb0c6db848, type: 3}
   BulletJam: {fileID: 5295337618659188879, guid: 5fe958b4be8ff234ca76cb0fbee81b80, type: 3}
-  R: 0
-  G: 0
-  B: 0
+  R: 240
+  G: 75
+  B: 78
   expandSFX: {fileID: 640426684372199461}
 --- !u!58 &4494416264631432049
 CircleCollider2D:
