@@ -6,8 +6,6 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.UIElements.Experimental;
-using static UnityEditor.PlayerSettings;
-//using static UnityEditor.PlayerSettings;
 
 public class InventoryPowerUps : MonoBehaviour
 {

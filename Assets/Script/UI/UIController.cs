@@ -110,6 +110,11 @@ public class UIController : MonoBehaviour
         SceneManager.LoadScene("Mapa3");
     }
 
+    public void Credits()
+    {
+        SceneManager.LoadScene(5);
+    }
+
     public void SettingOn()
     {
         settingOn = false;

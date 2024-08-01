@@ -25,7 +25,8 @@ public static class SoundManager
         CloneOn,
         Cloneoff,
         Hover,
-        JamSplat
+        JamSplat,
+        CreditBGM
     }
 
     private static Dictionary<Sound, float> soundTimerDictionary;
