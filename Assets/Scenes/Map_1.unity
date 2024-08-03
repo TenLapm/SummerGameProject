@@ -1385,7 +1385,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8015289328942119885, guid: b24fd8c8bb317094bb9aa22efb081776, type: 3}
       propertyPath: setTime
-      value: 5
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 21103848109057347, guid: b24fd8c8bb317094bb9aa22efb081776, type: 3}
       propertyPath: m_IsActive
