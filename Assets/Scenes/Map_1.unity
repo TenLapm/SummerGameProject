@@ -1475,6 +1475,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 5980115230879022312, guid: b24fd8c8bb317094bb9aa22efb081776, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6505434393013382917, guid: b24fd8c8bb317094bb9aa22efb081776, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

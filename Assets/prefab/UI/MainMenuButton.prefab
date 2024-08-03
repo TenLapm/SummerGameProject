@@ -1879,5 +1879,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62489ce87c66c4d4d8e129cf38613cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgmSlider: {fileID: 3452678514907812886}
-  sfxSlider: {fileID: 1024188268905835894}
+  bgmSlider: {fileID: 1024188268905835894}
+  sfxSlider: {fileID: 3452678514907812886}
