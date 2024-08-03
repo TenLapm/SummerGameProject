@@ -476,7 +476,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &696531626
 RectTransform:
   m_ObjectHideFlags: 0
@@ -493,7 +493,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 480, y: -613.01}
+  m_AnchoredPosition: {x: 544, y: -613.01}
   m_SizeDelta: {x: 289.6232, y: 4268.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &696531627
@@ -628,8 +628,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 71.88472, y: -682.79175}
-  m_SizeDelta: {x: 815.2294, y: 346.9383}
+  m_AnchoredPosition: {x: 71.885, y: -741.4614}
+  m_SizeDelta: {x: 815.23, y: 229.5989}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &791398004
 MonoBehaviour:
@@ -1055,7 +1055,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 70, y: -383}
+  m_AnchoredPosition: {x: 70, y: -350}
   m_SizeDelta: {x: 1168.5388, y: 467.45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1468076609
@@ -1078,7 +1078,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: We akarapon
+  m_text: "We \n\nakarapon"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 81e7c10452832d540a10c7a60394fd7b, type: 2}
   m_sharedMaterial: {fileID: -5305037262265207385, guid: 81e7c10452832d540a10c7a60394fd7b, type: 2}
@@ -1396,8 +1396,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 222, y: -612.9917}
-  m_SizeDelta: {x: 235.462, y: 4268.9}
+  m_AnchoredPosition: {x: 296.69, y: -612.99}
+  m_SizeDelta: {x: 365.6139, y: 4268.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1860293480
 MonoBehaviour:
@@ -1419,8 +1419,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Paparniu\t\n\n\n\n\n\nKewalin\t\n\n\n\n\n\nPapassorn\n\n\n\n\n\nSaranchana\n\n\n\n\nTussiga
-    \n\n\n\n\n\nPaparn \t\n\n\n\n\n\n\nPhakaphol"
+  m_text: "Paparniu\t\t\nJaiklangburana \nLanta\n\n\n\nKewalin\t\nOchasunthon\nPIM\n\n\n\nPapassorn\t\nBangmo\nPower\n\n\n\nSaranchana\nCharoongchit\nNANA\n\n\nTussiga
+    \nSatitpornbunpote\nKAOFANG\n\n\n\nPaparn \t\nTantaprapa\nPANN\n\n\n\n\nPhakaphol\nLapmahapaisan\nTen"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 81e7c10452832d540a10c7a60394fd7b, type: 2}
   m_sharedMaterial: {fileID: -5305037262265207385, guid: 81e7c10452832d540a10c7a60394fd7b, type: 2}

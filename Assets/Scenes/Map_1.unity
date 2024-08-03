@@ -586,6 +586,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 613d6862dd9e0ba4ab94f4bbc672c05b, type: 3}
+--- !u!114 &658713346 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8666368722555193787, guid: b24fd8c8bb317094bb9aa22efb081776, type: 3}
+  m_PrefabInstance: {fileID: 1765992604}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &751412376
 GameObject:
   m_ObjectHideFlags: 0
@@ -1335,10 +1346,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -925582457
-  m_SortingLayer: 1
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 27f5817824a3ab14aa60f63155c89788, type: 3}
+  m_SortingLayerID: 557785339
+  m_SortingLayer: 6
+  m_SortingOrder: 10
+  m_Sprite: {fileID: 21300000, guid: b186620a60219004fa15d7172b43966e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1372,6 +1383,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8015289328942119885, guid: b24fd8c8bb317094bb9aa22efb081776, type: 3}
+      propertyPath: setTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 21103848109057347, guid: b24fd8c8bb317094bb9aa22efb081776, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1462551268577368347, guid: b24fd8c8bb317094bb9aa22efb081776, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1452,14 +1471,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4904079629556432208, guid: b24fd8c8bb317094bb9aa22efb081776, type: 3}
-      propertyPath: m_fontSize
-      value: 48
-      objectReference: {fileID: 0}
-    - target: {fileID: 4904079629556432208, guid: b24fd8c8bb317094bb9aa22efb081776, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 48
-      objectReference: {fileID: 0}
     - target: {fileID: 5980115230879022312, guid: b24fd8c8bb317094bb9aa22efb081776, type: 3}
       propertyPath: m_Name
       value: UI
@@ -1472,6 +1483,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8987796558065082936, guid: b24fd8c8bb317094bb9aa22efb081776, type: 3}
+      propertyPath: sfxSlider
+      value: 
+      objectReference: {fileID: 658713346}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
